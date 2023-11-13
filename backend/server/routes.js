@@ -25,16 +25,23 @@ if(!m_col_experiments){
 	process.exit(1);
 }
 
-//m_col_experiments.findOne().then((res) => {
-//	console.log(res);
-//});
-
 // Routing
 const router = express.Router();
 
-router.get("/", (req, res) => {
-	res.status(200);
-	res.end("Test");
+function send_json_res(res, _json)
+{
+	res.setHeader('Content-Type', 'application/json');
+	res.end(JSON.stringify(_json));
+}
+
+router.get("/experiments", async function(req, res){
+	let cur = m_col_experiments.find({}).project({name: 1, processor: 1, start_timestamp: 1, end_timestamp: 1, source_file: 1});
+	expm_desc = [];
+	for await(const doc of cur){
+		doc.length = doc.end_timestamp - doc.start_timestamp;
+		expm_desc.push(doc);
+	}
+	send_json_res(res, expm_desc);
 });
 
 module.exports = router;
