@@ -34,11 +34,41 @@ function send_json_res(res, _json)
 	res.end(JSON.stringify(_json));
 }
 
+function filters_prep_in(filters)
+{
+	if(filters.id) filters._id = filters.id; 
+	delete filters.id;
+	if(filters.length){
+		filters["$expr"] = {
+			$eq: [
+				{ $dateDiff: {
+					startDate: "$start_timestamp",
+					endDate: "$end_timestamp",
+					unit: "millisecond"
+				}},
+				filters.length
+			]};
+		delete filters.length;
+	}
+}
+function expm_prep_out(expm)
+{
+	if(expm._id) expm.id = expm._id;
+	delete expm._id;
+	expm.length = expm.end_timestamp - expm.start_timestamp;
+}
+
 router.get("/experiments", async function(req, res){
-	let cur = m_col_experiments.find({}).project({name: 1, processor: 1, start_timestamp: 1, end_timestamp: 1, source_file: 1});
+	let filters = {};
+	try{
+		filters = JSON.parse(req.header("filters"));
+	} catch {}
+	filters_prep_in(filters);
+
+	let cur = m_col_experiments.find(filters).project({name: 1, processor: 1, start_timestamp: 1, end_timestamp: 1, source_file: 1});
 	expm_desc = [];
 	for await(const doc of cur){
-		doc.length = doc.end_timestamp - doc.start_timestamp;
+		expm_prep_out(doc);
 		expm_desc.push(doc);
 	}
 	send_json_res(res, expm_desc);
