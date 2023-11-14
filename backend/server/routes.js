@@ -77,4 +77,34 @@ router.get("/experiments/:id", async function(req, res){
 	prep.send_json_res(res, doc.pipeline);
 });
 
+router.get("/experiment_stats", async function(req, res){
+	let filters = prep.get_filters(req);
+	prep.filters_expm(filters);
+	let cur = m_col_experiments.aggregate([
+	{$match: filters
+	},
+	{$group: {_id: "avg",
+		avg_time: {$avg: {$dateDiff:
+			{ startDate: "$start_timestamp", endDate: "$end_timestamp", unit: "millisecond" }
+			}},
+		min_time: {$min: {$dateDiff:
+			{ startDate: "$start_timestamp", endDate: "$end_timestamp", unit: "millisecond" }
+			}},
+		max_time: {$max: {$dateDiff:
+			{ startDate: "$start_timestamp", endDate: "$end_timestamp", unit: "millisecond" }
+			}},
+		}
+	}
+	]);
+
+	let doc = await cur.next();
+	if(!doc){
+		prep.send_error(res, 404, "None of experiments match the filter");
+		return;
+	}
+
+	delete doc._id;
+	prep.send_json_res(res, doc);
+});
+
 module.exports = router;
