@@ -2,6 +2,7 @@ const express = require("express");
 const { MongoClient } = require("mongodb");
 const fs = require('fs');
 const log = require('npmlog');
+const prep = require('./prep');
 
 // Set up config
 function generate_mongo_uri(ip, port, user, pwd)
@@ -25,53 +26,55 @@ if(!m_col_experiments){
 	process.exit(1);
 }
 
+// Misc functions
+
+function cycles_to_dict(cycles)
+{
+	out = [];
+	for(c of cycles){
+		d = {};
+		for(mi of c)
+			d[mi[0]] = mi[1];
+		out.push(d);
+	}
+	return out;
+}
+
 // Routing
 const router = express.Router();
 
-function send_json_res(res, _json)
-{
-	res.setHeader('Content-Type', 'application/json');
-	res.end(JSON.stringify(_json));
-}
-
-function filters_prep_in(filters)
-{
-	if(filters.id) filters._id = filters.id; 
-	delete filters.id;
-	if(filters.length){
-		filters["$expr"] = {
-			$eq: [
-				{ $dateDiff: {
-					startDate: "$start_timestamp",
-					endDate: "$end_timestamp",
-					unit: "millisecond"
-				}},
-				filters.length
-			]};
-		delete filters.length;
-	}
-}
-function expm_prep_out(expm)
-{
-	if(expm._id) expm.id = expm._id;
-	delete expm._id;
-	expm.length = expm.end_timestamp - expm.start_timestamp;
-}
-
 router.get("/experiments", async function(req, res){
-	let filters = {};
-	try{
-		filters = JSON.parse(req.header("filters"));
-	} catch {}
-	filters_prep_in(filters);
-
+	let filters = prep.get_filters(req);
+	prep.filters_expm(filters);
 	let cur = m_col_experiments.find(filters).project({name: 1, processor: 1, start_timestamp: 1, end_timestamp: 1, source_file: 1});
 	expm_desc = [];
 	for await(const doc of cur){
-		expm_prep_out(doc);
+		prep.doc_expm(doc);
 		expm_desc.push(doc);
 	}
-	send_json_res(res, expm_desc);
+	prep.send_json_res(res, expm_desc);
+});
+
+router.get("/experiments/:id", async function(req, res){
+	let filters = prep.get_filters(req, "cycle_range");
+	let proj = {};
+	try {
+		proj = prep.filters_expm_id(filters, req);
+	} catch {
+		prep.send_error(res, 400, "Invalid request");
+		return;
+	}
+	if(!filters._id){
+		prep.send_error(res, 400, "Invalid request");
+		return;
+	}
+	doc = await m_col_experiments.findOne(filters, {projection: proj});
+	if(!doc){
+		prep.send_error(res, 404, "Experiment not found");
+		return;
+	}
+	doc.pipeline.cycles = cycles_to_dict(doc.pipeline.cycles);
+	prep.send_json_res(res, doc.pipeline);
 });
 
 module.exports = router;
