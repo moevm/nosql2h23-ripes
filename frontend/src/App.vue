@@ -1,20 +1,17 @@
 <template>
   <NavbarComponent/>
-  <ExperimentsListComponent></ExperimentsListComponent>
-  <StatisticsComponent></StatisticsComponent>
+  <router-view/>
 </template>
 
 <script>
-import ExperimentsListComponent from './components/ExperimentsListComponent.vue'
-import NavbarComponent from './components/NavbarComponent.vue';
-import StatisticsComponent from './components/StatisticsComponent.vue';
+
+import NavbarComponent from './components/NavbarComponent.vue'
+
 
 export default {
   name: 'App',
   components: {
     NavbarComponent,
-    ExperimentsListComponent,
-    StatisticsComponent
 }
 }
 </script>
