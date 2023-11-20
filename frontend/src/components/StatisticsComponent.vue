@@ -4,10 +4,14 @@
     </div>
   </template>
   
-  <script>
+<script>
+  import ExperimentsAPI from '../api/requests'
   export default {
     name: 'StatisticsComponent',
     props: {
+    },
+    async created() {
+      console.log((await ExperimentsAPI.getExperiments()).data)
     }
   }
   </script>
