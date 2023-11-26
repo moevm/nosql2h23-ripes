@@ -1,7 +1,8 @@
 import http from './httpAxios'
 
 export default class ExperimentsAPI {
-  static async getExperiments() {
+  static async getExperiments(filter) {
+    console.log(filter)
     return http.get('/experiments')
   }
   static async getExperiment(id) {
