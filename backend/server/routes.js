@@ -74,7 +74,11 @@ router.get("/experiments/:id", async function(req, res){
 		return;
 	}
 	doc.pipeline.cycles = cycles_to_dict(doc.pipeline.cycles);
-	prep.send_json_res(res, doc.pipeline);
+	doc.cycles = doc.pipeline.cycles;
+	doc.instructions = doc.pipeline.instructions;
+	delete doc.pipeline;
+	delete doc._id;
+	prep.send_json_res(res, doc);
 });
 
 router.get("/experiment_stats", async function(req, res){
