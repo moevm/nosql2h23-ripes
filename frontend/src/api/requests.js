@@ -5,7 +5,10 @@ export default class ExperimentsAPI {
     console.log(filter)
     return http.get('/experiments')
   }
-  static async getExperiment(id) {
+  static async getExperiment(id, min,max) {
+    if(min !== undefined && max!== undefined) {
+      return http.get(`/experiments/${id}`, {headers: {cycle_range: `{"begin":${min},"end":${max}}`}})
+    }
     return http.get(`/experiments/${id}`)
   }
   static async getStatistic() {
