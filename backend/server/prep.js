@@ -43,6 +43,8 @@ function filters_expm_id(filters, req)
 	filters._id = ObjectId.createFromHexString(req.params.id);
 	proj = {};
 	if(filters.begin !== undefined && filters.end !== undefined){
+		if(filters.begin > filters.end)
+			filters.begin = filters.end;
 		proj.pipeline = { cycles: {
 					$slice: [filters.begin, filters.end - filters.begin + 1]}
 					};
