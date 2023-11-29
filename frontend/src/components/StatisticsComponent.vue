@@ -1,6 +1,6 @@
 <template>
     <div class="experiments_list">
-        <h1>Статистика экспериментов</h1>
+        <h1>{{ statistics }}</h1>
     </div>
   </template>
   
@@ -8,14 +8,26 @@
   import ExperimentsAPI from '../api/requests'
   export default {
     name: 'StatisticsComponent',
-    props: {
+    data() {
+      return {
+        statistics: null
+      }
     },
     async created() {
-      console.log((await ExperimentsAPI.getExperiments()).data)
+      this.statistics = (await ExperimentsAPI.getStatistic()).data
+      console.log(this.statistics)
     }
   }
-  </script>
+</script>
   
+<style>
+.experiments_list {
+  background-color: gray;
+}
+
+
+</style>
+
   <!-- Add "scoped" attribute to limit CSS to this component only -->
   
   
