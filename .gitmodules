@@ -1,0 +1,3 @@
+[submodule "ripes"]
+	path = ripes
+	url = https://github.com/sovietsolider/ripes.git
