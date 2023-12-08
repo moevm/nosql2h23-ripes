@@ -1,0 +1,92 @@
+[
+	{
+	"name": "Вычисление факториала",
+	"processor": "RV32_5S",
+	"source_file": "experiment.s",
+	"start_timestamp": {"$date": "2023-10-22T19:00:00Z"},
+	"end_timestamp": {"$date": "2023-10-22T19:00:04Z"},
+	"instructions_retired": 138,
+	"cpi": 1.5072463768115942,
+	"ipc": 0.6634615384615384,
+	"cycles": 208,
+	"extensions": "MC",
+	"pipeline": {
+		"instructions": ["auipc x10 0x10000", "lw x10 0 x10", "jal x1 28 <fact>", "addi x11 x10 0"],
+		"cycles": [
+			[[0, "IF"]],
+			[[0, "ID"], [1, "IF"]],
+			[[0, "EX"], [1, "ID"], [2,"IF"]]
+		]
+	},
+	"registers": [
+		{ "name": "x1", "value": 28, "size": 32 }
+	]
+},
+{
+	"name": "Умножение комплексных чисел",
+	"processor": "RV32_5S",
+	"source_file": "experiment2.s",
+	"start_timestamp": {"$date": "2023-10-22T20:17:00Z"},
+	"end_timestamp": {"$date": "2023-10-23T00:01:03Z"},
+	"instructions_retired": 971,
+	"cpi": 1.541709577754892,
+	"ipc": 0.648630594522378,
+	"cycles": 1497,
+	"extensions": "MC",
+	"pipeline": {
+		"instructions": ["auipc x10 0x10000", "lw x10 0 x10", "auipc x11 0x10000", "lw x11 -4 x11", "auipc x12 0x10000", "lw x12 -8 0x10000", "auipc x13 0x10000", "lw x13 -12 x13", "jal x1 104 <complexMul>", "addi x5 x11 0", "addi x10 x10 0", "addi x17 x0 1", "ecall", "auipc x10 0x10000", "addi x10 x10 -36", "addi x17 x0 4", "ecall", "addi x10 x5 0", "addi x17 x0 1", "ecall", "addi x17 x0 10", "ecall", "addi x5 x0 32", "addi x28 x0 0"],
+		"cycles": [
+			[[0, "IF"]],
+			[[0, "ID"], [1, "IF"]],
+			[[0, "EX"], [1, "ID"], [2, "IF"]],
+			[[0, "MEM"], [1, "EX"], [2, "ID"], [3, "IF"]],
+			[[0, "WB"], [1, "MEM"], [2, "EX"], [3, "ID"], [4, "IF"]],
+			[[1, "WB"], [2, "MEM"], [3, "EX"], [4, "ID"], [5, "IF"]],
+			[[2, "WB"], [3, "MEM"], [4, "EX"], [5, "ID"], [6, "IF"]],
+			[[3, "WB"], [4, "MEM"], [5, "EX"], [6, "ID"], [7, "IF"]],
+			[[4, "WB"], [5, "MEM"], [6, "EX"], [7, "ID"], [8, "IF"]],
+			[[5, "WB"], [6, "MEM"], [7, "EX"], [8, "ID"], [9, "IF"]],
+			[[6, "WB"], [7, "MEM"], [8, "EX"], [9, "ID"], [10, "IF"]],
+			[[7, "WB"], [8, "MEM"]],
+			[[8, "WB"]],
+			[], [], [], [], [], [], [], [], [], [],
+			[[22, "IF"]],
+			[[22, "ID"], [23, "IF"]]
+		]
+	},
+	"registers": [
+		{ "name": "x0", "value": 0, "size": 32 },
+		{ "name": "x1", "value": 36, "size": 32 },
+		{ "name": "x2", "value": 0, "size": 32 },
+		{ "name": "x3", "value": 0, "size": 32 },
+		{ "name": "x4", "value": 0, "size": 32 },
+		{ "name": "x5", "value": 19, "size": 32 },
+		{ "name": "x6", "value": 0, "size": 32 },
+		{ "name": "x7", "value": 4294967289, "size": 32 },
+		{ "name": "x8", "value": 0, "size": 32 },
+		{ "name": "x9", "value": 0, "size": 32 },
+		{ "name": "x10", "value": 19, "size": 32 },
+		{ "name": "x11", "value": 19, "size": 32 },
+		{ "name": "x12", "value": 5, "size": 32 },
+		{ "name": "x13", "value": 4, "size": 32 },
+		{ "name": "x14", "value": 0, "size": 32 },
+		{ "name": "x15", "value": 0, "size": 32 },
+		{ "name": "x16", "value": 0, "size": 32 },
+		{ "name": "x17", "value": 10, "size": 32 },
+		{ "name": "x18", "value": 0, "size": 32 },
+		{ "name": "x19", "value": 0, "size": 32 },
+		{ "name": "x20", "value": 0, "size": 32 },
+		{ "name": "x21", "value": 0, "size": 32 },
+		{ "name": "x22", "value": 0, "size": 32 },
+		{ "name": "x23", "value": 0, "size": 32 },
+		{ "name": "x24", "value": 0, "size": 32 },
+		{ "name": "x25", "value": 0, "size": 32 },
+		{ "name": "x26", "value": 0, "size": 32 },
+		{ "name": "x27", "value": 0, "size": 32 },
+		{ "name": "x28", "value": 15, "size": 32 },
+		{ "name": "x29", "value": 0, "size": 32 },
+		{ "name": "x30", "value": 0, "size": 32 },
+		{ "name": "x31", "value": 0, "size": 32 }
+	]
+}
+]

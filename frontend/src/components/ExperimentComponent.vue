@@ -1,0 +1,139 @@
+<template>
+    <div class="experiments_list"></div>
+    <button class="back_button" v-on:click="this.$router.push('/experiments')">К списку экспериментов</button>
+    <input @input="event=>filter_min=event.target.value" type="range" min="0" :max="cycles_len" value="0">
+    <br>
+    <input @input="event=>filter_max=event.target.value" type="range" min="0" :max="cycles_len" :value="filter_max">
+    <br>
+    <button class="filter_button" v-on:click="getCycles(filter_min,filter_max)">Фильтр</button>
+    <div class="table">
+      <ag-grid-vue style="overflow-x:hidden; width: 100%; height: 500px;" class="ag-theme-alpine" :columnDefs="columnDefs"
+        :rowData="rowData" @grid-ready="onGridReady" :defaultColDef="defaultColDef" @onColumnResized="onTableResized" editable=true>
+      </ag-grid-vue>
+    </div>
+  </template>
+
+  <script>
+  import { AgGridVue } from 'ag-grid-vue3'
+  import "ag-grid-community/styles/ag-grid.css";
+  import "ag-grid-community/styles/ag-theme-alpine.css";
+  import ExperimentsAPI from '@/api/requests'
+  
+  export default {
+    name: 'ExperimentComponent',
+    components: {
+      AgGridVue
+    },
+    data() {
+      return {
+        filter_min: 0,
+        filter_max: 0,
+        cycles_len: 0,
+        gridApi: null,
+        defaultColDef: {
+          resizable: true,
+        },
+        rowData: [{ title: 'dfdf' }, { title: 'dfdf' }],
+        columnDefs: []
+      }
+    },
+    methods: {
+        onTableResized() {
+        //this.gridApi.sizeColumnsToFit()
+        },
+        onGridReady(params) {
+            this.gridApi = params.api
+            //params.api.sizeColumnsToFit();
+            //setInterval(() => params.api.sizeColumnsToFit(), 100)
+        },
+        async getCycles(min,max, init=false) {
+          let arr = []
+          let data = (await ExperimentsAPI.getExperiment(this.$route.params.id, min, max)).data
+          if(init){
+            this.cycles_len = data.cycles.length;
+            this.filter_max = this.cycles_len;
+          }
+          for(let i = 0; i < data.instructions.length; i++){
+            let j = {instructions: data.instructions[i]}
+            for(let k = 0; k < data.cycles.length; k++){
+              j['cycles'+(k+1)] = data.cycles[k][i] 
+          }
+            arr.push(j)
+          }
+          let header_array = [{
+            headerName: 'Инструкции',
+            field: 'instructions',
+            colId: 'instructions',
+            sizeColumnsToFit: true,
+            filter: true,
+            width: 200
+          }]
+          for(let i = 0; i < data.cycles.length; i++){
+            header_array.push({
+              headerName: (i+1+Number(this.filter_min)).toString(),
+              field: 'cycles'+(i+1),
+              colId: 'cycles'+(i+1),
+              sizeColumnsToFit: false,
+              filter: false,
+              width: 50,
+            })
+          }
+          this.columnDefs = header_array
+          this.rowData = arr
+        }
+    },
+    async created() {
+      this.getCycles(undefined,undefined,true)
+    }
+  }
+  </script>
+   
+  <style scoped>
+  .table {
+    width: 100%
+  }
+  .back_button {
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin: 5px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .filter_button {
+    width: 200px;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: greenyellow;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin: 5px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  </style>
+  <!-- Add "scoped" attribute to limit CSS to this component only -->
+  
+  
