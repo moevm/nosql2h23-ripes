@@ -114,13 +114,15 @@ export default {
 .filters-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 }
 
 .filters-list-container {
   background-color: rgb(212, 212, 212);
   width: fit-content;
-  padding: 2rem;
+  padding: 1.5rem 2rem 2rem 2rem;
   border-radius: 15px;
+  margin-bottom: 2rem;
 }
 </style>
 
