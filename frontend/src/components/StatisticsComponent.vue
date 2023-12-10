@@ -1,31 +1,127 @@
 <template>
-    <div class="experiments_list">
-        <h1>{{ statistics }}</h1>
+  <div class="experiments-container" v-if="statistics">
+    <div class="filters-list-container">
+      <div class="title">
+          <strong>Фильтры</strong>
+        </div>
+      <div class="filters-list">
+        
+
+        <div class="form-group-input">
+          <div class="input-title">
+            Название процессора
+          </div>
+          <input class="stat-input" v-model="filters.processor" />
+        </div>
+        <div class="form-group-input">
+          <div class="input-title">
+            Название процессора
+          </div>
+          <input class="stat-input" v-model="filters.processor" />
+        </div>
+        <div class="form-group-input">
+          <div class="input-title">
+            Название процессора
+          </div>
+          <input class="stat-input" v-model="filters.processor" />
+        </div>
+        <div class="form-group-input">
+          <div class="input-title">
+            Название процессора
+          </div>
+          <input class="stat-input" v-model="filters.processor" />
+        </div>
+      </div>
+
     </div>
-  </template>
+    <div class="experiments-list">
+      <div class="form-group">
+        <div class="title">
+          Среднее время: {{ statistics.avg_time }}
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="title">
+          Минимальное время:
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="title">
+          Максимальное время:
+        </div>
+      </div>
+
+      <h1>{{ statistics }}</h1>
+    </div>
+  </div>
+</template>
   
 <script>
-  import ExperimentsAPI from '../api/requests'
-  export default {
-    name: 'StatisticsComponent',
-    data() {
-      return {
-        statistics: null
+import ExperimentsAPI from '../api/requests'
+export default {
+  name: 'StatisticsComponent',
+  data() {
+    return {
+      statistics: null,
+      filters: {
+        processor: null,
+        source_file: null
       }
-    },
-    async created() {
-      this.statistics = (await ExperimentsAPI.getStatistic()).data
-      console.log(this.statistics)
     }
+  },
+  async created() {
+    this.statistics = (await ExperimentsAPI.getStatistic()).data
+    console.log(this.statistics)
   }
+}
 </script>
   
 <style>
-.experiments_list {
-  background-color: gray;
+.stat-input {
+  border-radius: 15px;
 }
 
+.input-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
 
+.form-group-input {}
+
+.form-group {
+  display: flex;
+  gap: 10px
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+.experiments-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.experiments-list {
+  background-color: rgb(212, 212, 212);
+  width: fit-content;
+  padding: 2rem;
+  border-radius: 15px;
+}
+
+.filters-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.filters-list-container {
+  background-color: rgb(212, 212, 212);
+  width: fit-content;
+  padding: 2rem;
+  border-radius: 15px;
+}
 </style>
 
   <!-- Add "scoped" attribute to limit CSS to this component only -->
