@@ -25,7 +25,8 @@ function filters_expm(filters)
 {
 	if(filters.id) filters._id = filters.id; 
 	delete filters.id;
-	if(filters.length){
+console.log("before", filters)
+	if(filters.length !== undefined){
 		filters["$expr"] = {
 			$eq: [
 				{ $dateDiff: {
@@ -36,6 +37,15 @@ function filters_expm(filters)
 				filters.length
 			]};
 		delete filters.length;
+	}
+
+	if(filters.start_timestamp !== undefined){
+		let tz_off = new Date().getTimezoneOffset() * 60000;
+		filters.start_timestamp = {"$eq": new Date(new Date(filters.start_timestamp).getTime() - tz_off)};
+	}
+	if(filters.end_timestamp !== undefined){
+		let tz_off = new Date().getTimezoneOffset() * 60000;
+		filters.end_timestamp = {"$eq": new Date(new Date(filters.end_timestamp).getTime() - tz_off)};
 	}
 }
 function filters_expm_id(filters, req)
