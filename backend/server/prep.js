@@ -10,6 +10,11 @@ function send_error(res, code, msg)
 	res.statusCode = code;
 	res.end(msg + "\n");
 }
+function send_ok(res)
+{
+	res.statusCode = 200;
+	res.end();
+}
 
 function get_filters(req, header_name)
 {
@@ -25,7 +30,6 @@ function filters_expm(filters)
 {
 	if(filters.id) filters._id = filters.id; 
 	delete filters.id;
-console.log("before", filters)
 	if(filters.length !== undefined){
 		filters["$expr"] = {
 			$eq: [
@@ -70,4 +74,4 @@ function doc_expm(expm)
 	expm.length = expm.end_timestamp - expm.start_timestamp;
 }
 
-module.exports = {send_json_res, send_error, get_filters, filters_expm, filters_expm_id, doc_expm};
+module.exports = {send_json_res, send_error, send_ok, get_filters, filters_expm, filters_expm_id, doc_expm};

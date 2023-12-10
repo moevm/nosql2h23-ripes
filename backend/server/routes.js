@@ -2,7 +2,13 @@ const express = require("express");
 const { MongoClient } = require("mongodb");
 const fs = require('fs');
 const log = require('npmlog');
+
 const prep = require('./prep');
+const mongo_io = require('./mongo_io');
+
+const os = require('os');
+const multer = require('multer');
+const upload = multer({ dest: os.tmpdir() });
 
 // Set up config
 function generate_mongo_uri(ip, port, user, pwd)
@@ -110,6 +116,23 @@ router.get("/experiment_stats", async function(req, res){
 
 	delete doc._id;
 	prep.send_json_res(res, doc);
+});
+
+router.post("/import", upload.single("file"), async function(req, res){
+	if(!req.file)
+		return;
+	try {
+		data = JSON.parse(fs.readFileSync(req.file.path).toString());
+	} catch(e) {
+		prep.send_error(res, 400, "Invalid JSON data\n" + e);
+		return;
+	}
+
+	mongo_io.save(m_col_experiments, data);
+	prep.send_ok(res);
+});
+router.get("/export", async function(req, res){
+	prep.send_json_res(res, await mongo_io.load(m_col_experiments));
 });
 
 module.exports = router;
