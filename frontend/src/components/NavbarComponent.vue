@@ -16,6 +16,9 @@
       <router-link to="/statistics" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4" style="font-size:30px">
         Статистика
       </router-link>
+      <router-link to="/import_export" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4" style="font-size:30px">
+        Импорт/экспорт
+      </router-link>
     </div>
   </div>
 </nav>
