@@ -23,13 +23,13 @@
           <div class="input-title">
             Начало эксперимента
           </div>
-          <input class="stat-input" v-model="filters.start_timestamp" type="datetime-local"/>
+          <input class="stat-input" v-model="filters.start_timestamp" type="datetime-local" step="2"/>
         </div>
         <div class="form-group-input">
           <div class="input-title">
             Окончание эксперимента
           </div>
-          <input class="stat-input" v-model="filters.end_timestamp" type="datetime-local" />
+          <input class="stat-input" v-model="filters.end_timestamp" type="datetime-local" step="2"/>
         </div>
       </div>
       <div class="primary-button" style="margin-top: 1rem;" @click="applyFilters">
