@@ -32,7 +32,9 @@
           <input class="stat-input" v-model="filters.processor" />
         </div>
       </div>
-
+      <div class="primary-button" style="margin-top: 1rem;">
+        Применить
+      </div>
     </div>
     <div class="experiments-list">
       <div class="form-group">
@@ -51,8 +53,9 @@
         </div>
       </div>
 
-      <h1>{{ statistics }}</h1>
+      
     </div>
+
   </div>
 </template>
   
@@ -76,7 +79,17 @@ export default {
 }
 </script>
   
+width: fit-content;
 <style>
+.primary-button {
+  border-radius: 15px;
+  background-color: #013F4E;
+  color: white;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+  width: fit-content;
+  cursor: pointer;
+}
+
 .stat-input {
   border-radius: 15px;
 }
@@ -114,7 +127,7 @@ export default {
 .filters-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 10px;  
 }
 
 .filters-list-container {
@@ -127,5 +140,3 @@ export default {
 </style>
 
   <!-- Add "scoped" attribute to limit CSS to this component only -->
-  
-  
