@@ -23,13 +23,13 @@
           <div class="input-title">
             Начало эксперимента
           </div>
-          <input class="stat-input" v-model="filters.start_timestamp.$date" type="datetime-local"/>
+          <input class="stat-input" v-model="filters.start_timestamp" type="datetime-local"/>
         </div>
         <div class="form-group-input">
           <div class="input-title">
             Окончание эксперимента
           </div>
-          <input class="stat-input" v-model="filters.end_timestamp.$date" type="datetime-local" />
+          <input class="stat-input" v-model="filters.end_timestamp" type="datetime-local" />
         </div>
       </div>
       <div class="primary-button" style="margin-top: 1rem;" @click="applyFilters">
@@ -39,21 +39,20 @@
     <div class="experiments-list">
       <div class="form-group">
         <div class="title">
-          Среднее время: {{ statistics.avg_time }}
+          Среднее время: {{ statistics.avg_time.toFixed(2) }}
         </div>
       </div>
       <div class="form-group">
         <div class="title">
-          Минимальное время: {{ statistics.min_time }}
+          Минимальное время: {{ statistics.min_time.toFixed(2) }}
         </div>
       </div>
       <div class="form-group">
         <div class="title">
-          Максимальное время: {{ statistics.max_time }}
+          Максимальное время: {{ statistics.max_time.toFixed(2) }}
         </div>
       </div>
     </div>
-    {{ filters }}
   </div>
 </template>
   
@@ -67,8 +66,8 @@ export default {
       filters: {
         processor: null,
         source_file: null,
-        start_timestamp: {$date: ""},
-        end_timestamp: {$date: ""},
+        start_timestamp: null,
+        end_timestamp: null,
       }
     }
   },
@@ -79,7 +78,7 @@ export default {
     }
   },
   async created() {
-    this.statistics = (await ExperimentsAPI.getStatistic()).data
+    this.statistics = (await ExperimentsAPI.getStatistic(this.filters)).data
     console.log(this.statistics)
   }
 
