@@ -1,5 +1,5 @@
 <template>
-<nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+<nav class="flex items-center justify-between flex-wrap p-6 primary-color">
   <div class="flex items-center flex-shrink-0 text-white mr-6">
     <span class="font-semibold text-xl tracking-tight" style="font-size:30px">Эксперименты RIPES</span>
   </div>
@@ -26,3 +26,9 @@ export default {
   name: 'NavbarComponent'
 }
 </script>
+
+<style>
+.primary-color {
+  background-color: #013F4E;
+}
+</style>

@@ -11,7 +11,8 @@ export default class ExperimentsAPI {
     }
     return http.get(`/experiments/${id}`)
   }
-  static async getStatistic() {
-    return http.get(`/experiment_stats`, {headers: {"processor": "RV32_5S"}})
+  static async getStatistic(filters) {
+    console.log(filters)
+    return http.get(`/experiment_stats`, {headers: filters})
   }
 }

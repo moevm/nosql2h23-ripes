@@ -11,28 +11,28 @@
           <div class="input-title">
             Название процессора
           </div>
-          <input class="stat-input" v-model="filters.processor" />
+          <input class="stat-input" v-model="filters.processor"/>
         </div>
         <div class="form-group-input">
           <div class="input-title">
-            Название процессора
+            Название исполняемого файла
           </div>
-          <input class="stat-input" v-model="filters.processor" />
+          <input class="stat-input" v-model="filters.source_file" />
         </div>
         <div class="form-group-input">
           <div class="input-title">
-            Название процессора
+            Начало эксперимента
           </div>
-          <input class="stat-input" v-model="filters.processor" />
+          <input class="stat-input" v-model="filters.start_timestamp.$date" type="datetime-local"/>
         </div>
         <div class="form-group-input">
           <div class="input-title">
-            Название процессора
+            Окончание эксперимента
           </div>
-          <input class="stat-input" v-model="filters.processor" />
+          <input class="stat-input" v-model="filters.end_timestamp.$date" type="datetime-local" />
         </div>
       </div>
-      <div class="primary-button" style="margin-top: 1rem;">
+      <div class="primary-button" style="margin-top: 1rem;" @click="applyFilters">
         Применить
       </div>
     </div>
@@ -44,18 +44,16 @@
       </div>
       <div class="form-group">
         <div class="title">
-          Минимальное время:
+          Минимальное время: {{ statistics.min_time }}
         </div>
       </div>
       <div class="form-group">
         <div class="title">
-          Максимальное время:
+          Максимальное время: {{ statistics.max_time }}
         </div>
       </div>
-
-      
     </div>
-
+    {{ filters }}
   </div>
 </template>
   
@@ -68,14 +66,23 @@ export default {
       statistics: null,
       filters: {
         processor: null,
-        source_file: null
+        source_file: null,
+        start_timestamp: {$date: ""},
+        end_timestamp: {$date: ""},
       }
+    }
+  },
+  methods: {
+    async applyFilters() { 
+      console.log((await ExperimentsAPI.getStatistic(this.filters)).data)
+      this.statistics = (await ExperimentsAPI.getStatistic(this.filters)).data
     }
   },
   async created() {
     this.statistics = (await ExperimentsAPI.getStatistic()).data
     console.log(this.statistics)
   }
+
 }
 </script>
   
@@ -92,6 +99,7 @@ width: fit-content;
 
 .stat-input {
   border-radius: 15px;
+  overflow: hidden;
 }
 
 .input-title {
