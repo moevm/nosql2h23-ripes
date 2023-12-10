@@ -53,6 +53,7 @@
         </div>
       </div>
     </div>
+    {{ filters }}
   </div>
 </template>
   

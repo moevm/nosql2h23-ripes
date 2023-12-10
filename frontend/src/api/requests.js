@@ -13,11 +13,13 @@ export default class ExperimentsAPI {
   }
   static async getStatistic(filters) {
     for (const [key, value] of Object.entries(filters)) {
+      if(key === 'start_timestamp' || key === 'end_timestamp') {
+        filters[key] = new Date(filters[key]).toISOString()
+      }
       if(value === null || value === '') {
         delete filters[key]
       }
     }
-    console.log(filters)
     return http.get(`/experiment_stats`, {headers: {filters: JSON.stringify(filters)}})
   }
 }
