@@ -84,6 +84,7 @@ router.get("/experiments/:id", async function(req, res){
 router.get("/experiment_stats", async function(req, res){
 	let filters = prep.get_filters(req);
 	prep.filters_expm(filters);
+	console.log(filters)
 	let cur = m_col_experiments.aggregate([
 	{$match: filters
 	},

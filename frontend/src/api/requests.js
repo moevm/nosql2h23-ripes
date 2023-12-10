@@ -12,9 +12,10 @@ export default class ExperimentsAPI {
     return http.get(`/experiments/${id}`)
   }
   static async getStatistic(filters) {
+    let userTimezoneOffset = new Date().getTimezoneOffset() * 60000;
     for (const [key, value] of Object.entries(filters)) {
       if(key === 'start_timestamp' || key === 'end_timestamp') {
-        filters[key] = new Date(filters[key]).toISOString()
+        filters[key] = new Date(new Date(filters[key]).getTime() - userTimezoneOffset).toISOString()
       }
       if(value === null || value === '') {
         delete filters[key]
