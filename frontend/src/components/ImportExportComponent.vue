@@ -3,13 +3,13 @@
     <div class="export_section">
       <h1 class="export_text">Экспорт</h1>
       <label class="label_1" for="file_name">Введите название файла:</label>
-      <input class="file_name" type="text">
+      <input class="file_name" type="text" @input="event=>downloadFileName=event.target.value" :value="downloadFileName">
       <h1 class="file_name_text">Формат файла: JSON</h1>
-      <div class="range_slider">
+      <!-- <div class="range_slider">
         <p>Диапазон индексов записей</p>
         <input type="range" id="cowbell" name="cowbell" min="0" max="1000" value="500" step="100" />
-      </div>
-      <button class="export_button">Экспорт</button>
+      </div> -->
+      <button @click="handleExport" class="export_button">Экспорт</button>
     </div>
     <div class="import_section">
       <h1 class="import_text">Импорт</h1>
@@ -30,6 +30,7 @@
     data(){
       return {
         chosenFileName: null,
+        downloadFileName: "export.json",
       }
     },
     methods: {
@@ -41,6 +42,18 @@
         formData.append('file', this.chosenFileName);
         await ExperimentsAPI.importFile(formData)
         console.log(formData);
+      },
+      async handleExport() {
+        const result = await ExperimentsAPI.exportFile()
+        const data = JSON.stringify(result)
+        const blob = new Blob([data], {type: 'application/json'});
+        const e = document.createEvent('MouseEvents'),
+        a = document.createElement('a');
+        a.download = this.downloadFileName;
+        a.href = window.URL.createObjectURL(blob);
+        a.dataset.downloadurl = ['text/json', a.download, a.href].join(':');
+        e.initEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        a.dispatchEvent(e);
       },
     }
   }
@@ -62,11 +75,11 @@
       margin-top: 30px;
       margin-left: 777px;
         }
-      .range_slider {
+      /* .range_slider {
       font-size: 20px;
       font-weight: 400;
       margin-left: 777px;
-        }
+        } */
       .file_name {
         width: 300px;
         height: 30px;

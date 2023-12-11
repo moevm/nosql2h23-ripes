@@ -25,4 +25,8 @@ export default class ExperimentsAPI {
     console.log(response.data);
     return response.data;
   }
+  static async exportFile(){
+    const respone = await http.get('/export');
+    return respone;
+  }
 }

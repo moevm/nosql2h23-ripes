@@ -106,8 +106,8 @@ width: fit-content;
   font-size: 1rem;
   margin-bottom: 0.5rem;
 }
-
-.form-group-input {}
+/* 
+.form-group-input {} */
 
 .form-group {
   display: flex;
