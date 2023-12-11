@@ -13,20 +13,36 @@
     </div>
     <div class="import_section">
       <h1 class="import_text">Импорт</h1>
-      <p class="chosen_file_text">Выбранный файл:</p>
+      <p class="chosen_file_text">Выбранный файл: {{ chosenFileName?.name }}</p>
       <br>
-      <input class="chosen_file" type="file">
-      <button class="import_button">Импорт</button>
+      <input class="chosen_file" type="file" @change="handleFileChange">
+      <button @click="handleImport" class="import_button">Импорт</button>
     </div>
   </template>
   
   <script>
   import "ag-grid-community/styles/ag-grid.css";
   import "ag-grid-community/styles/ag-theme-alpine.css";
-//   import ExperimentsAPI from '@/api/requests'
+  import ExperimentsAPI from '@/api/requests'
   
   export default {
     name: 'ImportExportComponent',
+    data(){
+      return {
+        chosenFileName: null,
+      }
+    },
+    methods: {
+      handleFileChange(event) {
+      this.chosenFileName = event.target.files[0] || null;
+      },
+      async handleImport() {
+        const formData = new FormData();
+        formData.append('file', this.chosenFileName);
+        await ExperimentsAPI.importFile(formData)
+        console.log(formData);
+      },
+    }
   }
   </script>
    

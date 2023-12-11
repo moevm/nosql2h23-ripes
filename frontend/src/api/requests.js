@@ -19,4 +19,10 @@ export default class ExperimentsAPI {
     }
     return http.get(`/experiment_stats`, {headers: {filters: JSON.stringify(filters)}})
   }
+  static async importFile(formData){
+    console.log(formData);
+    const response = await http.post('/import', formData);
+    console.log(response.data);
+    return response.data;
+  }
 }
