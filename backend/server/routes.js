@@ -124,11 +124,18 @@ router.post("/import", upload.single("file"), async function(req, res){
 	try {
 		data = JSON.parse(fs.readFileSync(req.file.path).toString());
 	} catch(e) {
-		prep.send_error(res, 400, "Invalid JSON data\n" + e);
+		prep.send_error(res, 400, "Invalid JSON data:\n" + e);
 		return;
 	}
 
-	mongo_io.save(m_col_experiments, data);
+	try {
+		mongo_io.save(m_col_experiments, data);
+	} catch(e) {
+		if(e instanceof MongoBulkWriteError)
+			prep.send_error(res, 400, "Invalid database entry:\n" + e);
+		else
+			throw e;
+	}
 	prep.send_ok(res);
 });
 router.get("/export", async function(req, res){
