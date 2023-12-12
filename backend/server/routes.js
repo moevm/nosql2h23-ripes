@@ -13,6 +13,7 @@ const upload = multer({ dest: os.tmpdir() });
 // Set up config
 function generate_mongo_uri(ip, port, user, pwd)
 {
+	console.log("mongodb://" + user + ":" + pwd + "@" + ip + ":" + port)
 	return "mongodb://" + user + ":" + pwd + "@" + ip + ":" + port;
 }
 const config = JSON.parse(fs.readFileSync('config.json'));
