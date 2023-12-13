@@ -1,5 +1,5 @@
 const express = require("express");
-const { MongoClient } = require("mongodb");
+const { MongoClient, MongoBulkWriteError } = require("mongodb");
 const fs = require('fs');
 const log = require('npmlog');
 
@@ -134,6 +134,10 @@ router.post("/import", upload.single("file"), async function(req, res){
 	} catch(e) {
 		if(e instanceof MongoBulkWriteError)
 			prep.send_error(res, 400, "Invalid database entry:\n" + e);
+		else if (e instanceof TypeError){
+			data = [data];
+			mongo_io.save(m_col_experiments, data);
+		}
 		else
 			throw e;
 	}

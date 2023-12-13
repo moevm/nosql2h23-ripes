@@ -23,7 +23,7 @@ services:
       nosql_ripes_net:
         ipv4_address: 10.5.0.3
     ports:
-      - "127.0.0.1:3000:3000"
+      - "3000:3000"
   client:
     restart: unless-stopped
     container_name: ripes_client
