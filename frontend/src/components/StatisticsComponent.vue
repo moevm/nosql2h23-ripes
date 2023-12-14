@@ -53,7 +53,6 @@
         </div>
       </div>
     </div>
-    {{ filters }}
   </div>
 </template>
   
@@ -80,7 +79,6 @@ export default {
   },
   async created() {
     this.statistics = (await ExperimentsAPI.getStatistic(this.filters)).data
-    console.log(this.statistics)
   }
 
 }
