@@ -5,7 +5,7 @@
     <br>
     <input @input="event=>filter_max=event.target.value" type="range" min="0" :max="cycles_len" :value="filter_max">
     <br>
-    <button class="filter_button" v-on:click="getCycles(filter_min,filter_max)">Фильтр</button>
+    <button class="custom-btn btn-15" v-on:click="getCycles(filter_min,filter_max)">Фильтр</button>
     <div class="table">
       <ag-grid-vue style="overflow-x:hidden; width: 100%; height: 500px;" class="ag-theme-alpine" :columnDefs="columnDefs"
         :rowData="rowData" @grid-ready="onGridReady" :defaultColDef="defaultColDef" @onColumnResized="onTableResized" editable=true>
@@ -113,26 +113,54 @@
     font-family: 'Courier New', Courier, monospace;
   }
 
-  .filter_button {
-    width: 200px;
-    height: 50px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: greenyellow;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    margin: 5px;
-    font-family: 'Courier New', Courier, monospace;
-  }
+  .custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+.btn-15 {
+  background: #b621fe;
+  border: none;
+  z-index: 1;
+}
+.btn-15:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #663dff;
+  border-radius: 5px;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  transition: all 0.3s ease;
+}
+.btn-15:hover {
+  color: #fff;
+}
+.btn-15:hover:after {
+  left: 0;
+  width: 100%;
+}
+.btn-15:active {
+  top: 2px;
+}
   </style>
   <!-- Add "scoped" attribute to limit CSS to this component only -->
   
