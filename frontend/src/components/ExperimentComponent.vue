@@ -1,8 +1,10 @@
 <template>
     <div class="experiments_list"></div>
     <button class="back_button" v-on:click="this.$router.push('/experiments')">К списку экспериментов</button>
+    <p>Минимум</p>
     <input @input="event=>filter_min=event.target.value" type="range" min="0" :max="cycles_len" value="0">
     <br>
+    <p>Максимум</p>
     <input @input="event=>filter_max=event.target.value" type="range" min="0" :max="cycles_len" :value="filter_max">
     <br>
     <button class="custom-btn btn-15" v-on:click="getCycles(filter_min,filter_max)">Фильтр</button>
