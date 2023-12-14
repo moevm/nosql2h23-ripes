@@ -1,6 +1,4 @@
 <template>
-  <div class="experiments_list"></div>
-  <h1>Список экспериментов</h1>
   <div class="table">
     <ag-grid-vue style="overflow-x:hidden; width: 100%; height: 500px;" class="ag-theme-alpine" :columnDefs="columnDefs"
       :rowData="rowData" @grid-ready="onGridReady" :defaultColDef="defaultColDef" @onColumnResized="onTableResized" editable=true @rowClicked="onRowClicked">
