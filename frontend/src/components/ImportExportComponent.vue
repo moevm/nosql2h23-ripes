@@ -41,7 +41,6 @@
         const formData = new FormData();
         formData.append('file', this.chosenFileName);
         await ExperimentsAPI.importFile(formData)
-        console.log(formData);
       },
       async handleExport() {
         const result = await ExperimentsAPI.exportFile()

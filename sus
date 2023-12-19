@@ -1,0 +1,1328 @@
+Attaching to ripes_client, ripes_server, mongodb
+[33mripes_client |[0m /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+[33mripes_client |[0m /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+[33mripes_client |[0m /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+[33mripes_client |[0m 10-listen-on-ipv6-by-default.sh: info: IPv6 listen already enabled
+[33mripes_client |[0m /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+[33mripes_client |[0m /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+[33mripes_client |[0m /docker-entrypoint.sh: Configuration complete; ready for start up
+[33mripes_client |[0m 2023/12/19 18:42:08 [notice] 1#1: using the "epoll" event method
+[33mripes_client |[0m 2023/12/19 18:42:08 [notice] 1#1: nginx/1.24.0
+[33mripes_client |[0m 2023/12/19 18:42:08 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r4) 
+[33mripes_client |[0m 2023/12/19 18:42:08 [notice] 1#1: OS: Linux 6.2.0-39-generic
+[33mripes_client |[0m 2023/12/19 18:42:08 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+[33mripes_client |[0m 2023/12/19 18:42:08 [notice] 1#1: start worker processes
+[33mripes_client |[0m 2023/12/19 18:42:08 [notice] 1#1: start worker process 22
+[33mripes_client |[0m 2023/12/19 18:42:08 [notice] 1#1: start worker process 23
+[33mripes_client |[0m 2023/12/19 18:42:08 [notice] 1#1: start worker process 24
+[33mripes_client |[0m 2023/12/19 18:42:08 [notice] 1#1: start worker process 25
+[33mripes_client |[0m 2023/12/19 18:42:08 [notice] 1#1: start worker process 26
+[33mripes_client |[0m 2023/12/19 18:42:08 [notice] 1#1: start worker process 27
+[33mripes_client |[0m 2023/12/19 18:42:08 [notice] 1#1: start worker process 28
+[33mripes_client |[0m 2023/12/19 18:42:08 [notice] 1#1: start worker process 29
+[33mripes_client |[0m 2023/12/19 18:42:08 [notice] 1#1: start worker process 30
+[33mripes_client |[0m 2023/12/19 18:42:08 [notice] 1#1: start worker process 31
+[33mripes_client |[0m 2023/12/19 18:42:08 [notice] 1#1: start worker process 32
+[33mripes_client |[0m 2023/12/19 18:42:08 [notice] 1#1: start worker process 33
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.540+00:00"},"s":"I",  "c":"CONTROL",  "id":23285,   "ctx":"main","msg":"Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'"}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.542+00:00"},"s":"I",  "c":"NETWORK",  "id":4915701, "ctx":"main","msg":"Initialized wire specification","attr":{"spec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":21},"incomingInternalClient":{"minWireVersion":0,"maxWireVersion":21},"outgoing":{"minWireVersion":6,"maxWireVersion":21},"isInternalClient":true}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.542+00:00"},"s":"I",  "c":"NETWORK",  "id":4648601, "ctx":"main","msg":"Implicit TCP FastOpen unavailable. If TCP FastOpen is required, set tcpFastOpenServer, tcpFastOpenClient, and tcpFastOpenQueueSize."}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.543+00:00"},"s":"I",  "c":"REPL",     "id":5123008, "ctx":"main","msg":"Successfully registered PrimaryOnlyService","attr":{"service":"TenantMigrationDonorService","namespace":"config.tenantMigrationDonors"}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.543+00:00"},"s":"I",  "c":"REPL",     "id":5123008, "ctx":"main","msg":"Successfully registered PrimaryOnlyService","attr":{"service":"TenantMigrationRecipientService","namespace":"config.tenantMigrationRecipients"}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.543+00:00"},"s":"I",  "c":"CONTROL",  "id":5945603, "ctx":"main","msg":"Multi threading initialized"}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.543+00:00"},"s":"I",  "c":"TENANT_M", "id":7091600, "ctx":"main","msg":"Starting TenantMigrationAccessBlockerRegistry"}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.543+00:00"},"s":"I",  "c":"CONTROL",  "id":4615611, "ctx":"initandlisten","msg":"MongoDB starting","attr":{"pid":1,"port":27017,"dbPath":"/data/db","architecture":"64-bit","host":"9355ffe3f576"}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.543+00:00"},"s":"I",  "c":"CONTROL",  "id":23403,   "ctx":"initandlisten","msg":"Build Info","attr":{"buildInfo":{"version":"7.0.4","gitVersion":"38f3e37057a43d2e9f41a39142681a76062d582e","openSSLVersion":"OpenSSL 3.0.2 15 Mar 2022","modules":[],"allocator":"tcmalloc","environment":{"distmod":"ubuntu2204","distarch":"x86_64","target_arch":"x86_64"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.543+00:00"},"s":"I",  "c":"CONTROL",  "id":51765,   "ctx":"initandlisten","msg":"Operating System","attr":{"os":{"name":"Ubuntu","version":"22.04"}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.543+00:00"},"s":"I",  "c":"CONTROL",  "id":21951,   "ctx":"initandlisten","msg":"Options set by command line","attr":{"options":{"net":{"bindIp":"*"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.543+00:00"},"s":"I",  "c":"STORAGE",  "id":22270,   "ctx":"initandlisten","msg":"Storage engine to use detected by data files","attr":{"dbpath":"/data/db","storageEngine":"wiredTiger"}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.543+00:00"},"s":"I",  "c":"STORAGE",  "id":22297,   "ctx":"initandlisten","msg":"Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem","tags":["startupWarnings"]}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.543+00:00"},"s":"I",  "c":"STORAGE",  "id":22315,   "ctx":"initandlisten","msg":"Opening WiredTiger","attr":{"config":"create,cache_size=15447M,session_max=33000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,remove=true,path=journal,compressor=snappy),builtin_extension_config=(zstd=(compression_level=6)),file_manager=(close_idle_time=600,close_scan_interval=10,close_handle_minimum=2000),statistics_log=(wait=0),json_output=(error,message),verbose=[recovery_progress:1,checkpoint_progress:1,compact_progress:1,backup:0,checkpoint:0,compact:0,evict:0,history_store:0,recovery:0,rts:0,salvage:0,tiered:0,timestamp:0,transaction:0,verify:0,log:0],"}}
+[32mripes_server |[0m mongodb://ripes_server:a_real_password@mongodb:27017
+[32mripes_server |[0m info server Listening to ripes_server:3000
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.827+00:00"},"s":"I",  "c":"STORAGE",  "id":4795906, "ctx":"initandlisten","msg":"WiredTiger opened","attr":{"durationMillis":284}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.827+00:00"},"s":"I",  "c":"RECOVERY", "id":23987,   "ctx":"initandlisten","msg":"WiredTiger recoveryTimestamp","attr":{"recoveryTimestamp":{"$timestamp":{"t":0,"i":0}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.831+00:00"},"s":"W",  "c":"CONTROL",  "id":22120,   "ctx":"initandlisten","msg":"Access control is not enabled for the database. Read and write access to data and configuration is unrestricted","tags":["startupWarnings"]}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.831+00:00"},"s":"W",  "c":"CONTROL",  "id":5123300, "ctx":"initandlisten","msg":"vm.max_map_count is too low","attr":{"currentValue":65530,"recommendedMinimum":1677720,"maxConns":838860},"tags":["startupWarnings"]}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.832+00:00"},"s":"I",  "c":"NETWORK",  "id":4915702, "ctx":"initandlisten","msg":"Updated wire specification","attr":{"oldSpec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":21},"incomingInternalClient":{"minWireVersion":0,"maxWireVersion":21},"outgoing":{"minWireVersion":6,"maxWireVersion":21},"isInternalClient":true},"newSpec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":21},"incomingInternalClient":{"minWireVersion":21,"maxWireVersion":21},"outgoing":{"minWireVersion":21,"maxWireVersion":21},"isInternalClient":true}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.832+00:00"},"s":"I",  "c":"REPL",     "id":5853300, "ctx":"initandlisten","msg":"current featureCompatibilityVersion value","attr":{"featureCompatibilityVersion":"7.0","context":"startup"}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.832+00:00"},"s":"I",  "c":"STORAGE",  "id":5071100, "ctx":"initandlisten","msg":"Clearing temp directory"}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.833+00:00"},"s":"I",  "c":"CONTROL",  "id":6608200, "ctx":"initandlisten","msg":"Initializing cluster server parameters from disk"}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.833+00:00"},"s":"I",  "c":"CONTROL",  "id":20536,   "ctx":"initandlisten","msg":"Flow Control is enabled on this deployment"}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.833+00:00"},"s":"I",  "c":"FTDC",     "id":20625,   "ctx":"initandlisten","msg":"Initializing full-time diagnostic data capture","attr":{"dataDirectory":"/data/db/diagnostic.data"}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.835+00:00"},"s":"I",  "c":"REPL",     "id":6015317, "ctx":"initandlisten","msg":"Setting new configuration state","attr":{"newState":"ConfigReplicationDisabled","oldState":"ConfigPreStart"}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.835+00:00"},"s":"I",  "c":"STORAGE",  "id":22262,   "ctx":"initandlisten","msg":"Timestamp monitor starting"}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.835+00:00"},"s":"I",  "c":"NETWORK",  "id":23015,   "ctx":"listener","msg":"Listening on","attr":{"address":"/tmp/mongodb-27017.sock"}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.835+00:00"},"s":"I",  "c":"NETWORK",  "id":23015,   "ctx":"listener","msg":"Listening on","attr":{"address":"0.0.0.0"}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:08.835+00:00"},"s":"I",  "c":"NETWORK",  "id":23016,   "ctx":"listener","msg":"Waiting for connections","attr":{"port":27017,"ssl":"off"}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:09.178+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:41256","uuid":{"uuid":{"$uuid":"8e295950-24db-41d1-a5eb-1996a45450c2"}},"connectionId":1,"connectionCount":1}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:09.187+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn1","msg":"client metadata","attr":{"remote":"172.19.0.3:41256","client":"conn1","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:09.195+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:41258","uuid":{"uuid":{"$uuid":"b5319256-c0b0-489a-87d2-5b2e25438e90"}},"connectionId":2,"connectionCount":2}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:09.197+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn2","msg":"client metadata","attr":{"remote":"172.19.0.3:41258","client":"conn2","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:09.197+00:00"},"s":"I",  "c":"ACCESS",   "id":20251,   "ctx":"conn2","msg":"Supported SASL mechanisms requested for unknown user","attr":{"user":{"user":"ripes_server","db":"admin"}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:09.197+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn2","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:09.197+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn2","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:41258","isSpeculative":true,"isClusterMember":false,"mechanism":"SCRAM-SHA-256","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":75,"summary":{"0":{"step":1,"step_total":2,"duration_micros":62}}}},"extraInfo":{}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:09.198+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn2","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:09.198+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn2","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:41258","isSpeculative":false,"isClusterMember":false,"mechanism":"SCRAM-SHA-1","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":86,"summary":{"0":{"step":1,"step_total":2,"duration_micros":75}}}},"extraInfo":{}}}
+[32mripes_server |[0m /server/node_modules/mongodb/lib/bulk/common.js:294
+[32mripes_server |[0m             return callback(new MongoBulkWriteError(err, new BulkWriteResult(bulkOperation.s.bulkResult, bulkOperation.isOrdered)));
+[32mripes_server |[0m                             ^
+[32mripes_server |[0m 
+[32mripes_server |[0m MongoBulkWriteError: Authentication failed.
+[32mripes_server |[0m     at resultHandler (/server/node_modules/mongodb/lib/bulk/common.js:294:29)
+[32mripes_server |[0m     at /server/node_modules/mongodb/lib/utils.js:274:66
+[32mripes_server |[0m     at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+[32mripes_server |[0m   ok: 0,
+[32mripes_server |[0m   code: 18,
+[32mripes_server |[0m   codeName: 'AuthenticationFailed',
+[32mripes_server |[0m   connectionGeneration: 1,
+[32mripes_server |[0m   writeErrors: [],
+[32mripes_server |[0m   result: BulkWriteResult {
+[32mripes_server |[0m     insertedCount: 0,
+[32mripes_server |[0m     matchedCount: 0,
+[32mripes_server |[0m     modifiedCount: 0,
+[32mripes_server |[0m     deletedCount: 0,
+[32mripes_server |[0m     upsertedCount: 0,
+[32mripes_server |[0m     upsertedIds: {},
+[32mripes_server |[0m     insertedIds: {
+[32mripes_server |[0m       '0': ObjectId {
+[32mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[32mripes_server |[0m           101, 129, 228,   1,  43,
+[32mripes_server |[0m            28,  30,  41, 236, 181,
+[32mripes_server |[0m           212,  56
+[32mripes_server |[0m         ]
+[32mripes_server |[0m       },
+[32mripes_server |[0m       '1': ObjectId {
+[32mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[32mripes_server |[0m           101, 129, 228,   1,  43,
+[32mripes_server |[0m            28,  30,  41, 236, 181,
+[32mripes_server |[0m           212,  57
+[32mripes_server |[0m         ]
+[32mripes_server |[0m       },
+[32mripes_server |[0m       '2': ObjectId {
+[32mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[32mripes_server |[0m           101, 129, 228,   1,  43,
+[32mripes_server |[0m            28,  30,  41, 236, 181,
+[32mripes_server |[0m           212,  58
+[32mripes_server |[0m         ]
+[32mripes_server |[0m       },
+[32mripes_server |[0m       '3': ObjectId {
+[32mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[32mripes_server |[0m           101, 129, 228,   1,  43,
+[32mripes_server |[0m            28,  30,  41, 236, 181,
+[32mripes_server |[0m           212,  59
+[32mripes_server |[0m         ]
+[32mripes_server |[0m       }
+[32mripes_server |[0m     }
+[32mripes_server |[0m   },
+[32mripes_server |[0m   [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+[32mripes_server |[0m }
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:09.207+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn1","msg":"Connection ended","attr":{"remote":"172.19.0.3:41256","uuid":{"uuid":{"$uuid":"8e295950-24db-41d1-a5eb-1996a45450c2"}},"connectionId":1,"connectionCount":1}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:09.207+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn2","msg":"Connection ended","attr":{"remote":"172.19.0.3:41258","uuid":{"uuid":{"$uuid":"b5319256-c0b0-489a-87d2-5b2e25438e90"}},"connectionId":2,"connectionCount":0}}
+[35mripes_server |[0m mongodb://ripes_server:a_real_password@mongodb:27017
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:10.030+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:35096","uuid":{"uuid":{"$uuid":"9088bc57-5907-48c5-a0a5-9638b802350b"}},"connectionId":3,"connectionCount":1}}
+[35mripes_server |[0m info server Listening to ripes_server:3000
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:10.033+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn3","msg":"client metadata","attr":{"remote":"172.19.0.3:35096","client":"conn3","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:10.038+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:35102","uuid":{"uuid":{"$uuid":"7881856c-a0e0-4cc0-84a1-9457798513c8"}},"connectionId":4,"connectionCount":2}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:10.039+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn4","msg":"client metadata","attr":{"remote":"172.19.0.3:35102","client":"conn4","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:10.039+00:00"},"s":"I",  "c":"ACCESS",   "id":20251,   "ctx":"conn4","msg":"Supported SASL mechanisms requested for unknown user","attr":{"user":{"user":"ripes_server","db":"admin"}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:10.039+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn4","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:10.039+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn4","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:35102","isSpeculative":true,"isClusterMember":false,"mechanism":"SCRAM-SHA-256","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":89,"summary":{"0":{"step":1,"step_total":2,"duration_micros":76}}}},"extraInfo":{}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:10.040+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn4","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:10.040+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn4","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:35102","isSpeculative":false,"isClusterMember":false,"mechanism":"SCRAM-SHA-1","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":70,"summary":{"0":{"step":1,"step_total":2,"duration_micros":59}}}},"extraInfo":{}}}
+[35mripes_server |[0m /server/node_modules/mongodb/lib/bulk/common.js:294
+[35mripes_server |[0m             return callback(new MongoBulkWriteError(err, new BulkWriteResult(bulkOperation.s.bulkResult, bulkOperation.isOrdered)));
+[35mripes_server |[0m                             ^
+[35mripes_server |[0m 
+[35mripes_server |[0m MongoBulkWriteError: Authentication failed.
+[35mripes_server |[0m     at resultHandler (/server/node_modules/mongodb/lib/bulk/common.js:294:29)
+[35mripes_server |[0m     at /server/node_modules/mongodb/lib/utils.js:274:66
+[35mripes_server |[0m     at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+[35mripes_server |[0m   ok: 0,
+[35mripes_server |[0m   code: 18,
+[35mripes_server |[0m   codeName: 'AuthenticationFailed',
+[35mripes_server |[0m   connectionGeneration: 0,
+[35mripes_server |[0m   writeErrors: [],
+[35mripes_server |[0m   result: BulkWriteResult {
+[35mripes_server |[0m     insertedCount: 0,
+[35mripes_server |[0m     matchedCount: 0,
+[35mripes_server |[0m     modifiedCount: 0,
+[35mripes_server |[0m     deletedCount: 0,
+[35mripes_server |[0m     upsertedCount: 0,
+[35mripes_server |[0m     upsertedIds: {},
+[35mripes_server |[0m     insertedIds: {
+[35mripes_server |[0m       '0': ObjectId {
+[35mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[35mripes_server |[0m           101, 129, 228,   2,  93,
+[35mripes_server |[0m           132,  47,  47, 149, 204,
+[35mripes_server |[0m           170, 178
+[35mripes_server |[0m         ]
+[35mripes_server |[0m       },
+[35mripes_server |[0m       '1': ObjectId {
+[35mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[35mripes_server |[0m           101, 129, 228,   2,  93,
+[35mripes_server |[0m           132,  47,  47, 149, 204,
+[35mripes_server |[0m           170, 179
+[35mripes_server |[0m         ]
+[35mripes_server |[0m       },
+[35mripes_server |[0m       '2': ObjectId {
+[35mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[35mripes_server |[0m           101, 129, 228,   2,  93,
+[35mripes_server |[0m           132,  47,  47, 149, 204,
+[35mripes_server |[0m           170, 180
+[35mripes_server |[0m         ]
+[35mripes_server |[0m       },
+[35mripes_server |[0m       '3': ObjectId {
+[35mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[35mripes_server |[0m           101, 129, 228,   2,  93,
+[35mripes_server |[0m           132,  47,  47, 149, 204,
+[35mripes_server |[0m           170, 181
+[35mripes_server |[0m         ]
+[35mripes_server |[0m       }
+[35mripes_server |[0m     }
+[35mripes_server |[0m   },
+[35mripes_server |[0m   [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+[35mripes_server |[0m }
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:10.046+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn4","msg":"Connection ended","attr":{"remote":"172.19.0.3:35102","uuid":{"uuid":{"$uuid":"7881856c-a0e0-4cc0-84a1-9457798513c8"}},"connectionId":4,"connectionCount":1}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:10.046+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn3","msg":"Connection ended","attr":{"remote":"172.19.0.3:35096","uuid":{"uuid":{"$uuid":"9088bc57-5907-48c5-a0a5-9638b802350b"}},"connectionId":3,"connectionCount":0}}
+[32mripes_server exited with code 1
+[0m[34mripes_server |[0m mongodb://ripes_server:a_real_password@mongodb:27017
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:10.868+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:35112","uuid":{"uuid":{"$uuid":"b4a55759-f13d-4b99-8c75-aa46f2118aea"}},"connectionId":5,"connectionCount":1}}
+[34mripes_server |[0m info server Listening to ripes_server:3000
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:10.871+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn5","msg":"client metadata","attr":{"remote":"172.19.0.3:35112","client":"conn5","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:10.876+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:35126","uuid":{"uuid":{"$uuid":"7bf457a1-90c9-425b-8d79-efebbb7aa45e"}},"connectionId":6,"connectionCount":2}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:10.877+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn6","msg":"client metadata","attr":{"remote":"172.19.0.3:35126","client":"conn6","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:10.877+00:00"},"s":"I",  "c":"ACCESS",   "id":20251,   "ctx":"conn6","msg":"Supported SASL mechanisms requested for unknown user","attr":{"user":{"user":"ripes_server","db":"admin"}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:10.877+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn6","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:10.877+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn6","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:35126","isSpeculative":true,"isClusterMember":false,"mechanism":"SCRAM-SHA-256","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":87,"summary":{"0":{"step":1,"step_total":2,"duration_micros":73}}}},"extraInfo":{}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:10.878+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn6","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:10.878+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn6","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:35126","isSpeculative":false,"isClusterMember":false,"mechanism":"SCRAM-SHA-1","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":102,"summary":{"0":{"step":1,"step_total":2,"duration_micros":88}}}},"extraInfo":{}}}
+[34mripes_server |[0m /server/node_modules/mongodb/lib/bulk/common.js:294
+[34mripes_server |[0m             return callback(new MongoBulkWriteError(err, new BulkWriteResult(bulkOperation.s.bulkResult, bulkOperation.isOrdered)));
+[34mripes_server |[0m                             ^
+[34mripes_server |[0m 
+[34mripes_server |[0m MongoBulkWriteError: Authentication failed.
+[34mripes_server |[0m     at resultHandler (/server/node_modules/mongodb/lib/bulk/common.js:294:29)
+[34mripes_server |[0m     at /server/node_modules/mongodb/lib/utils.js:274:66
+[34mripes_server |[0m     at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+[34mripes_server |[0m   ok: 0,
+[34mripes_server |[0m   code: 18,
+[34mripes_server |[0m   codeName: 'AuthenticationFailed',
+[34mripes_server |[0m   connectionGeneration: 0,
+[34mripes_server |[0m   writeErrors: [],
+[34mripes_server |[0m   result: BulkWriteResult {
+[34mripes_server |[0m     insertedCount: 0,
+[34mripes_server |[0m     matchedCount: 0,
+[34mripes_server |[0m     modifiedCount: 0,
+[34mripes_server |[0m     deletedCount: 0,
+[34mripes_server |[0m     upsertedCount: 0,
+[34mripes_server |[0m     upsertedIds: {},
+[34mripes_server |[0m     insertedIds: {
+[34mripes_server |[0m       '0': ObjectId {
+[34mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[34mripes_server |[0m           101, 129, 228,   2,
+[34mripes_server |[0m           217, 107, 242, 151,
+[34mripes_server |[0m           250, 127, 140, 170
+[34mripes_server |[0m         ]
+[34mripes_server |[0m       },
+[34mripes_server |[0m       '1': ObjectId {
+[34mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[34mripes_server |[0m           101, 129, 228,   2,
+[34mripes_server |[0m           217, 107, 242, 151,
+[34mripes_server |[0m           250, 127, 140, 171
+[34mripes_server |[0m         ]
+[34mripes_server |[0m       },
+[34mripes_server |[0m       '2': ObjectId {
+[34mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[34mripes_server |[0m           101, 129, 228,   2,
+[34mripes_server |[0m           217, 107, 242, 151,
+[34mripes_server |[0m           250, 127, 140, 172
+[34mripes_server |[0m         ]
+[34mripes_server |[0m       },
+[34mripes_server |[0m       '3': ObjectId {
+[34mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[34mripes_server |[0m           101, 129, 228,   2,
+[34mripes_server |[0m           217, 107, 242, 151,
+[34mripes_server |[0m           250, 127, 140, 173
+[34mripes_server |[0m         ]
+[34mripes_server |[0m       }
+[34mripes_server |[0m     }
+[34mripes_server |[0m   },
+[34mripes_server |[0m   [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+[34mripes_server |[0m }
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:10.884+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn6","msg":"Connection ended","attr":{"remote":"172.19.0.3:35126","uuid":{"uuid":{"$uuid":"7bf457a1-90c9-425b-8d79-efebbb7aa45e"}},"connectionId":6,"connectionCount":1}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:10.884+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn5","msg":"Connection ended","attr":{"remote":"172.19.0.3:35112","uuid":{"uuid":{"$uuid":"b4a55759-f13d-4b99-8c75-aa46f2118aea"}},"connectionId":5,"connectionCount":0}}
+[35mripes_server exited with code 1
+[0m[36;1mripes_server |[0m mongodb://ripes_server:a_real_password@mongodb:27017
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:11.703+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:35140","uuid":{"uuid":{"$uuid":"b7fe01f7-8d50-4570-b1dd-05334639256e"}},"connectionId":7,"connectionCount":1}}
+[36;1mripes_server |[0m info server Listening to ripes_server:3000
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:11.707+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn7","msg":"client metadata","attr":{"remote":"172.19.0.3:35140","client":"conn7","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:11.711+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:35144","uuid":{"uuid":{"$uuid":"638e04e4-ff7c-446a-9d81-2bc53c33bd02"}},"connectionId":8,"connectionCount":2}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:11.712+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn8","msg":"client metadata","attr":{"remote":"172.19.0.3:35144","client":"conn8","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:11.713+00:00"},"s":"I",  "c":"ACCESS",   "id":20251,   "ctx":"conn8","msg":"Supported SASL mechanisms requested for unknown user","attr":{"user":{"user":"ripes_server","db":"admin"}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:11.713+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn8","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:11.713+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn8","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:35144","isSpeculative":true,"isClusterMember":false,"mechanism":"SCRAM-SHA-256","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":51,"summary":{"0":{"step":1,"step_total":2,"duration_micros":41}}}},"extraInfo":{}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:11.713+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn8","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:11.713+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn8","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:35144","isSpeculative":false,"isClusterMember":false,"mechanism":"SCRAM-SHA-1","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":75,"summary":{"0":{"step":1,"step_total":2,"duration_micros":67}}}},"extraInfo":{}}}
+[36;1mripes_server |[0m /server/node_modules/mongodb/lib/bulk/common.js:294
+[36;1mripes_server |[0m             return callback(new MongoBulkWriteError(err, new BulkWriteResult(bulkOperation.s.bulkResult, bulkOperation.isOrdered)));
+[36;1mripes_server |[0m                             ^
+[36;1mripes_server |[0m 
+[36;1mripes_server |[0m MongoBulkWriteError: Authentication failed.
+[36;1mripes_server |[0m     at resultHandler (/server/node_modules/mongodb/lib/bulk/common.js:294:29)
+[36;1mripes_server |[0m     at /server/node_modules/mongodb/lib/utils.js:274:66
+[36;1mripes_server |[0m     at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+[36;1mripes_server |[0m   ok: 0,
+[36;1mripes_server |[0m   code: 18,
+[36;1mripes_server |[0m   codeName: 'AuthenticationFailed',
+[36;1mripes_server |[0m   connectionGeneration: 0,
+[36;1mripes_server |[0m   writeErrors: [],
+[36;1mripes_server |[0m   result: BulkWriteResult {
+[36;1mripes_server |[0m     insertedCount: 0,
+[36;1mripes_server |[0m     matchedCount: 0,
+[36;1mripes_server |[0m     modifiedCount: 0,
+[36;1mripes_server |[0m     deletedCount: 0,
+[36;1mripes_server |[0m     upsertedCount: 0,
+[36;1mripes_server |[0m     upsertedIds: {},
+[36;1mripes_server |[0m     insertedIds: {
+[36;1mripes_server |[0m       '0': ObjectId {
+[36;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[36;1mripes_server |[0m           101, 129, 228,  3,  95,
+[36;1mripes_server |[0m            16, 189,  14, 38, 128,
+[36;1mripes_server |[0m            37, 198
+[36;1mripes_server |[0m         ]
+[36;1mripes_server |[0m       },
+[36;1mripes_server |[0m       '1': ObjectId {
+[36;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[36;1mripes_server |[0m           101, 129, 228,  3,  95,
+[36;1mripes_server |[0m            16, 189,  14, 38, 128,
+[36;1mripes_server |[0m            37, 199
+[36;1mripes_server |[0m         ]
+[36;1mripes_server |[0m       },
+[36;1mripes_server |[0m       '2': ObjectId {
+[36;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[36;1mripes_server |[0m           101, 129, 228,  3,  95,
+[36;1mripes_server |[0m            16, 189,  14, 38, 128,
+[36;1mripes_server |[0m            37, 200
+[36;1mripes_server |[0m         ]
+[36;1mripes_server |[0m       },
+[36;1mripes_server |[0m       '3': ObjectId {
+[36;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[36;1mripes_server |[0m           101, 129, 228,  3,  95,
+[36;1mripes_server |[0m            16, 189,  14, 38, 128,
+[36;1mripes_server |[0m            37, 201
+[36;1mripes_server |[0m         ]
+[36;1mripes_server |[0m       }
+[36;1mripes_server |[0m     }
+[36;1mripes_server |[0m   },
+[36;1mripes_server |[0m   [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+[36;1mripes_server |[0m }
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:11.719+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn8","msg":"Connection ended","attr":{"remote":"172.19.0.3:35144","uuid":{"uuid":{"$uuid":"638e04e4-ff7c-446a-9d81-2bc53c33bd02"}},"connectionId":8,"connectionCount":1}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:11.719+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn7","msg":"Connection ended","attr":{"remote":"172.19.0.3:35140","uuid":{"uuid":{"$uuid":"b7fe01f7-8d50-4570-b1dd-05334639256e"}},"connectionId":7,"connectionCount":0}}
+[34mripes_server exited with code 1
+[0m[33;1mripes_server |[0m mongodb://ripes_server:a_real_password@mongodb:27017
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:12.987+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:35152","uuid":{"uuid":{"$uuid":"78c2b04d-0b65-42ba-a526-8e9ca16e92fa"}},"connectionId":9,"connectionCount":1}}
+[33;1mripes_server |[0m info server Listening to ripes_server:3000
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:12.990+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn9","msg":"client metadata","attr":{"remote":"172.19.0.3:35152","client":"conn9","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:12.995+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:35154","uuid":{"uuid":{"$uuid":"05d619fe-61bd-4d6d-b5f2-0acc1dc9a5e8"}},"connectionId":10,"connectionCount":2}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:12.996+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn10","msg":"client metadata","attr":{"remote":"172.19.0.3:35154","client":"conn10","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:12.996+00:00"},"s":"I",  "c":"ACCESS",   "id":20251,   "ctx":"conn10","msg":"Supported SASL mechanisms requested for unknown user","attr":{"user":{"user":"ripes_server","db":"admin"}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:12.996+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn10","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:12.996+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn10","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:35154","isSpeculative":true,"isClusterMember":false,"mechanism":"SCRAM-SHA-256","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":60,"summary":{"0":{"step":1,"step_total":2,"duration_micros":47}}}},"extraInfo":{}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:12.997+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn10","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:12.997+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn10","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:35154","isSpeculative":false,"isClusterMember":false,"mechanism":"SCRAM-SHA-1","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":56,"summary":{"0":{"step":1,"step_total":2,"duration_micros":45}}}},"extraInfo":{}}}
+[33;1mripes_server |[0m /server/node_modules/mongodb/lib/bulk/common.js:294
+[33;1mripes_server |[0m             return callback(new MongoBulkWriteError(err, new BulkWriteResult(bulkOperation.s.bulkResult, bulkOperation.isOrdered)));
+[33;1mripes_server |[0m                             ^
+[33;1mripes_server |[0m 
+[33;1mripes_server |[0m MongoBulkWriteError: Authentication failed.
+[33;1mripes_server |[0m     at resultHandler (/server/node_modules/mongodb/lib/bulk/common.js:294:29)
+[33;1mripes_server |[0m     at /server/node_modules/mongodb/lib/utils.js:274:66
+[33;1mripes_server |[0m     at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+[33;1mripes_server |[0m   ok: 0,
+[33;1mripes_server |[0m   code: 18,
+[33;1mripes_server |[0m   codeName: 'AuthenticationFailed',
+[33;1mripes_server |[0m   connectionGeneration: 0,
+[33;1mripes_server |[0m   writeErrors: [],
+[33;1mripes_server |[0m   result: BulkWriteResult {
+[33;1mripes_server |[0m     insertedCount: 0,
+[33;1mripes_server |[0m     matchedCount: 0,
+[33;1mripes_server |[0m     modifiedCount: 0,
+[33;1mripes_server |[0m     deletedCount: 0,
+[33;1mripes_server |[0m     upsertedCount: 0,
+[33;1mripes_server |[0m     upsertedIds: {},
+[33;1mripes_server |[0m     insertedIds: {
+[33;1mripes_server |[0m       '0': ObjectId {
+[33;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[33;1mripes_server |[0m           101, 129, 228,  4, 49,
+[33;1mripes_server |[0m           194, 122, 187, 99, 51,
+[33;1mripes_server |[0m           145, 168
+[33;1mripes_server |[0m         ]
+[33;1mripes_server |[0m       },
+[33;1mripes_server |[0m       '1': ObjectId {
+[33;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[33;1mripes_server |[0m           101, 129, 228,  4, 49,
+[33;1mripes_server |[0m           194, 122, 187, 99, 51,
+[33;1mripes_server |[0m           145, 169
+[33;1mripes_server |[0m         ]
+[33;1mripes_server |[0m       },
+[33;1mripes_server |[0m       '2': ObjectId {
+[33;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[33;1mripes_server |[0m           101, 129, 228,  4, 49,
+[33;1mripes_server |[0m           194, 122, 187, 99, 51,
+[33;1mripes_server |[0m           145, 170
+[33;1mripes_server |[0m         ]
+[33;1mripes_server |[0m       },
+[33;1mripes_server |[0m       '3': ObjectId {
+[33;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[33;1mripes_server |[0m           101, 129, 228,  4, 49,
+[33;1mripes_server |[0m           194, 122, 187, 99, 51,
+[33;1mripes_server |[0m           145, 171
+[33;1mripes_server |[0m         ]
+[33;1mripes_server |[0m       }
+[33;1mripes_server |[0m     }
+[33;1mripes_server |[0m   },
+[33;1mripes_server |[0m   [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+[33;1mripes_server |[0m }
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:13.003+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn10","msg":"Connection ended","attr":{"remote":"172.19.0.3:35154","uuid":{"uuid":{"$uuid":"05d619fe-61bd-4d6d-b5f2-0acc1dc9a5e8"}},"connectionId":10,"connectionCount":1}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:13.003+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn9","msg":"Connection ended","attr":{"remote":"172.19.0.3:35152","uuid":{"uuid":{"$uuid":"78c2b04d-0b65-42ba-a526-8e9ca16e92fa"}},"connectionId":9,"connectionCount":0}}
+[36;1mripes_server exited with code 1
+[0m[32;1mripes_server |[0m mongodb://ripes_server:a_real_password@mongodb:27017
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:15.111+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:35166","uuid":{"uuid":{"$uuid":"638f2288-1fd9-4273-9a69-a8791b40df0b"}},"connectionId":11,"connectionCount":1}}
+[32;1mripes_server |[0m info server Listening to ripes_server:3000
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:15.114+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn11","msg":"client metadata","attr":{"remote":"172.19.0.3:35166","client":"conn11","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:15.119+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:35182","uuid":{"uuid":{"$uuid":"72833eee-c45e-4e03-b4d3-d3d01f3de932"}},"connectionId":12,"connectionCount":2}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:15.120+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn12","msg":"client metadata","attr":{"remote":"172.19.0.3:35182","client":"conn12","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:15.120+00:00"},"s":"I",  "c":"ACCESS",   "id":20251,   "ctx":"conn12","msg":"Supported SASL mechanisms requested for unknown user","attr":{"user":{"user":"ripes_server","db":"admin"}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:15.120+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn12","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:15.120+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn12","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:35182","isSpeculative":true,"isClusterMember":false,"mechanism":"SCRAM-SHA-256","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":46,"summary":{"0":{"step":1,"step_total":2,"duration_micros":35}}}},"extraInfo":{}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:15.121+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn12","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:15.121+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn12","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:35182","isSpeculative":false,"isClusterMember":false,"mechanism":"SCRAM-SHA-1","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":70,"summary":{"0":{"step":1,"step_total":2,"duration_micros":61}}}},"extraInfo":{}}}
+[32;1mripes_server |[0m /server/node_modules/mongodb/lib/bulk/common.js:294
+[32;1mripes_server |[0m             return callback(new MongoBulkWriteError(err, new BulkWriteResult(bulkOperation.s.bulkResult, bulkOperation.isOrdered)));
+[32;1mripes_server |[0m                             ^
+[32;1mripes_server |[0m 
+[32;1mripes_server |[0m MongoBulkWriteError: Authentication failed.
+[32;1mripes_server |[0m     at resultHandler (/server/node_modules/mongodb/lib/bulk/common.js:294:29)
+[32;1mripes_server |[0m     at /server/node_modules/mongodb/lib/utils.js:274:66
+[32;1mripes_server |[0m     at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+[32;1mripes_server |[0m   ok: 0,
+[32;1mripes_server |[0m   code: 18,
+[32;1mripes_server |[0m   codeName: 'AuthenticationFailed',
+[32;1mripes_server |[0m   connectionGeneration: 0,
+[32;1mripes_server |[0m   writeErrors: [],
+[32;1mripes_server |[0m   result: BulkWriteResult {
+[32;1mripes_server |[0m     insertedCount: 0,
+[32;1mripes_server |[0m     matchedCount: 0,
+[32;1mripes_server |[0m     modifiedCount: 0,
+[32;1mripes_server |[0m     deletedCount: 0,
+[32;1mripes_server |[0m     upsertedCount: 0,
+[32;1mripes_server |[0m     upsertedIds: {},
+[32;1mripes_server |[0m     insertedIds: {
+[32;1mripes_server |[0m       '0': ObjectId {
+[32;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[32;1mripes_server |[0m           101, 129, 228, 7, 252,
+[32;1mripes_server |[0m            98,  27,  70, 2,  91,
+[32;1mripes_server |[0m           224, 240
+[32;1mripes_server |[0m         ]
+[32;1mripes_server |[0m       },
+[32;1mripes_server |[0m       '1': ObjectId {
+[32;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[32;1mripes_server |[0m           101, 129, 228, 7, 252,
+[32;1mripes_server |[0m            98,  27,  70, 2,  91,
+[32;1mripes_server |[0m           224, 241
+[32;1mripes_server |[0m         ]
+[32;1mripes_server |[0m       },
+[32;1mripes_server |[0m       '2': ObjectId {
+[32;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[32;1mripes_server |[0m           101, 129, 228, 7, 252,
+[32;1mripes_server |[0m            98,  27,  70, 2,  91,
+[32;1mripes_server |[0m           224, 242
+[32;1mripes_server |[0m         ]
+[32;1mripes_server |[0m       },
+[32;1mripes_server |[0m       '3': ObjectId {
+[32;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[32;1mripes_server |[0m           101, 129, 228, 7, 252,
+[32;1mripes_server |[0m            98,  27,  70, 2,  91,
+[32;1mripes_server |[0m           224, 243
+[32;1mripes_server |[0m         ]
+[32;1mripes_server |[0m       }
+[32;1mripes_server |[0m     }
+[32;1mripes_server |[0m   },
+[32;1mripes_server |[0m   [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+[32;1mripes_server |[0m }
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:15.128+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn12","msg":"Connection ended","attr":{"remote":"172.19.0.3:35182","uuid":{"uuid":{"$uuid":"72833eee-c45e-4e03-b4d3-d3d01f3de932"}},"connectionId":12,"connectionCount":1}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:15.128+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn11","msg":"Connection ended","attr":{"remote":"172.19.0.3:35166","uuid":{"uuid":{"$uuid":"638f2288-1fd9-4273-9a69-a8791b40df0b"}},"connectionId":11,"connectionCount":0}}
+[33;1mripes_server exited with code 1
+[0m[35;1mripes_server |[0m mongodb://ripes_server:a_real_password@mongodb:27017
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:18.770+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:35190","uuid":{"uuid":{"$uuid":"a7a5ddc3-2012-499d-ae85-17b6a8d87c4b"}},"connectionId":13,"connectionCount":1}}
+[35;1mripes_server |[0m info server Listening to ripes_server:3000
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:18.773+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn13","msg":"client metadata","attr":{"remote":"172.19.0.3:35190","client":"conn13","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:18.778+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:35206","uuid":{"uuid":{"$uuid":"1a8a9a70-7ace-4385-90e4-d33279641863"}},"connectionId":14,"connectionCount":2}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:18.779+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn14","msg":"client metadata","attr":{"remote":"172.19.0.3:35206","client":"conn14","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:18.779+00:00"},"s":"I",  "c":"ACCESS",   "id":20251,   "ctx":"conn14","msg":"Supported SASL mechanisms requested for unknown user","attr":{"user":{"user":"ripes_server","db":"admin"}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:18.779+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn14","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:18.779+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn14","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:35206","isSpeculative":true,"isClusterMember":false,"mechanism":"SCRAM-SHA-256","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":63,"summary":{"0":{"step":1,"step_total":2,"duration_micros":51}}}},"extraInfo":{}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:18.780+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn14","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:18.780+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn14","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:35206","isSpeculative":false,"isClusterMember":false,"mechanism":"SCRAM-SHA-1","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":83,"summary":{"0":{"step":1,"step_total":2,"duration_micros":75}}}},"extraInfo":{}}}
+[35;1mripes_server |[0m /server/node_modules/mongodb/lib/bulk/common.js:294
+[35;1mripes_server |[0m             return callback(new MongoBulkWriteError(err, new BulkWriteResult(bulkOperation.s.bulkResult, bulkOperation.isOrdered)));
+[35;1mripes_server |[0m                             ^
+[35;1mripes_server |[0m 
+[35;1mripes_server |[0m MongoBulkWriteError: Authentication failed.
+[35;1mripes_server |[0m     at resultHandler (/server/node_modules/mongodb/lib/bulk/common.js:294:29)
+[35;1mripes_server |[0m     at /server/node_modules/mongodb/lib/utils.js:274:66
+[35;1mripes_server |[0m     at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+[35;1mripes_server |[0m   ok: 0,
+[35;1mripes_server |[0m   code: 18,
+[35;1mripes_server |[0m   codeName: 'AuthenticationFailed',
+[35;1mripes_server |[0m   connectionGeneration: 0,
+[35;1mripes_server |[0m   writeErrors: [],
+[35;1mripes_server |[0m   result: BulkWriteResult {
+[35;1mripes_server |[0m     insertedCount: 0,
+[35;1mripes_server |[0m     matchedCount: 0,
+[35;1mripes_server |[0m     modifiedCount: 0,
+[35;1mripes_server |[0m     deletedCount: 0,
+[35;1mripes_server |[0m     upsertedCount: 0,
+[35;1mripes_server |[0m     upsertedIds: {},
+[35;1mripes_server |[0m     insertedIds: {
+[35;1mripes_server |[0m       '0': ObjectId {
+[35;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[35;1mripes_server |[0m           101, 129, 228, 10,  15,
+[35;1mripes_server |[0m            15,  12, 215, 82, 130,
+[35;1mripes_server |[0m           108, 229
+[35;1mripes_server |[0m         ]
+[35;1mripes_server |[0m       },
+[35;1mripes_server |[0m       '1': ObjectId {
+[35;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[35;1mripes_server |[0m           101, 129, 228, 10,  15,
+[35;1mripes_server |[0m            15,  12, 215, 82, 130,
+[35;1mripes_server |[0m           108, 230
+[35;1mripes_server |[0m         ]
+[35;1mripes_server |[0m       },
+[35;1mripes_server |[0m       '2': ObjectId {
+[35;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[35;1mripes_server |[0m           101, 129, 228, 10,  15,
+[35;1mripes_server |[0m            15,  12, 215, 82, 130,
+[35;1mripes_server |[0m           108, 231
+[35;1mripes_server |[0m         ]
+[35;1mripes_server |[0m       },
+[35;1mripes_server |[0m       '3': ObjectId {
+[35;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[35;1mripes_server |[0m           101, 129, 228, 10,  15,
+[35;1mripes_server |[0m            15,  12, 215, 82, 130,
+[35;1mripes_server |[0m           108, 232
+[35;1mripes_server |[0m         ]
+[35;1mripes_server |[0m       }
+[35;1mripes_server |[0m     }
+[35;1mripes_server |[0m   },
+[35;1mripes_server |[0m   [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+[35;1mripes_server |[0m }
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:18.785+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn14","msg":"Connection ended","attr":{"remote":"172.19.0.3:35206","uuid":{"uuid":{"$uuid":"1a8a9a70-7ace-4385-90e4-d33279641863"}},"connectionId":14,"connectionCount":1}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:18.785+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn13","msg":"Connection ended","attr":{"remote":"172.19.0.3:35190","uuid":{"uuid":{"$uuid":"a7a5ddc3-2012-499d-ae85-17b6a8d87c4b"}},"connectionId":13,"connectionCount":0}}
+[32;1mripes_server exited with code 1
+[0m[34;1mripes_server |[0m mongodb://ripes_server:a_real_password@mongodb:27017
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:25.591+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:33918","uuid":{"uuid":{"$uuid":"413a34fa-da52-49e2-82f2-54f13ce34d17"}},"connectionId":15,"connectionCount":1}}
+[34;1mripes_server |[0m info server Listening to ripes_server:3000
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:25.594+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn15","msg":"client metadata","attr":{"remote":"172.19.0.3:33918","client":"conn15","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:25.599+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:33934","uuid":{"uuid":{"$uuid":"4f9eedee-ee12-4bb7-be89-de6527ec3b91"}},"connectionId":16,"connectionCount":2}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:25.600+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn16","msg":"client metadata","attr":{"remote":"172.19.0.3:33934","client":"conn16","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:25.600+00:00"},"s":"I",  "c":"ACCESS",   "id":20251,   "ctx":"conn16","msg":"Supported SASL mechanisms requested for unknown user","attr":{"user":{"user":"ripes_server","db":"admin"}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:25.600+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn16","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:25.600+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn16","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:33934","isSpeculative":true,"isClusterMember":false,"mechanism":"SCRAM-SHA-256","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":70,"summary":{"0":{"step":1,"step_total":2,"duration_micros":60}}}},"extraInfo":{}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:25.601+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn16","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:25.601+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn16","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:33934","isSpeculative":false,"isClusterMember":false,"mechanism":"SCRAM-SHA-1","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":92,"summary":{"0":{"step":1,"step_total":2,"duration_micros":85}}}},"extraInfo":{}}}
+[34;1mripes_server |[0m /server/node_modules/mongodb/lib/bulk/common.js:294
+[34;1mripes_server |[0m             return callback(new MongoBulkWriteError(err, new BulkWriteResult(bulkOperation.s.bulkResult, bulkOperation.isOrdered)));
+[34;1mripes_server |[0m                             ^
+[34;1mripes_server |[0m 
+[34;1mripes_server |[0m MongoBulkWriteError: Authentication failed.
+[34;1mripes_server |[0m     at resultHandler (/server/node_modules/mongodb/lib/bulk/common.js:294:29)
+[34;1mripes_server |[0m     at /server/node_modules/mongodb/lib/utils.js:274:66
+[34;1mripes_server |[0m     at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+[34;1mripes_server |[0m   ok: 0,
+[34;1mripes_server |[0m   code: 18,
+[34;1mripes_server |[0m   codeName: 'AuthenticationFailed',
+[34;1mripes_server |[0m   connectionGeneration: 0,
+[34;1mripes_server |[0m   writeErrors: [],
+[34;1mripes_server |[0m   result: BulkWriteResult {
+[34;1mripes_server |[0m     insertedCount: 0,
+[34;1mripes_server |[0m     matchedCount: 0,
+[34;1mripes_server |[0m     modifiedCount: 0,
+[34;1mripes_server |[0m     deletedCount: 0,
+[34;1mripes_server |[0m     upsertedCount: 0,
+[34;1mripes_server |[0m     upsertedIds: {},
+[34;1mripes_server |[0m     insertedIds: {
+[34;1mripes_server |[0m       '0': ObjectId {
+[34;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[34;1mripes_server |[0m           101, 129, 228,  17,
+[34;1mripes_server |[0m           216, 143,  72, 175,
+[34;1mripes_server |[0m            36, 140, 251, 215
+[34;1mripes_server |[0m         ]
+[34;1mripes_server |[0m       },
+[34;1mripes_server |[0m       '1': ObjectId {
+[34;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[34;1mripes_server |[0m           101, 129, 228,  17,
+[34;1mripes_server |[0m           216, 143,  72, 175,
+[34;1mripes_server |[0m            36, 140, 251, 216
+[34;1mripes_server |[0m         ]
+[34;1mripes_server |[0m       },
+[34;1mripes_server |[0m       '2': ObjectId {
+[34;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[34;1mripes_server |[0m           101, 129, 228,  17,
+[34;1mripes_server |[0m           216, 143,  72, 175,
+[34;1mripes_server |[0m            36, 140, 251, 217
+[34;1mripes_server |[0m         ]
+[34;1mripes_server |[0m       },
+[34;1mripes_server |[0m       '3': ObjectId {
+[34;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[34;1mripes_server |[0m           101, 129, 228,  17,
+[34;1mripes_server |[0m           216, 143,  72, 175,
+[34;1mripes_server |[0m            36, 140, 251, 218
+[34;1mripes_server |[0m         ]
+[34;1mripes_server |[0m       }
+[34;1mripes_server |[0m     }
+[34;1mripes_server |[0m   },
+[34;1mripes_server |[0m   [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+[34;1mripes_server |[0m }
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:25.606+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn16","msg":"Connection ended","attr":{"remote":"172.19.0.3:33934","uuid":{"uuid":{"$uuid":"4f9eedee-ee12-4bb7-be89-de6527ec3b91"}},"connectionId":16,"connectionCount":1}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:25.606+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn15","msg":"Connection ended","attr":{"remote":"172.19.0.3:33918","uuid":{"uuid":{"$uuid":"413a34fa-da52-49e2-82f2-54f13ce34d17"}},"connectionId":15,"connectionCount":0}}
+[35;1mripes_server exited with code 1
+[0m[36mripes_server |[0m mongodb://ripes_server:a_real_password@mongodb:27017
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:38.909+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:36316","uuid":{"uuid":{"$uuid":"17a1ff71-0198-4b8e-9730-5504fb7382ce"}},"connectionId":17,"connectionCount":1}}
+[36mripes_server |[0m info server Listening to ripes_server:3000
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:38.912+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn17","msg":"client metadata","attr":{"remote":"172.19.0.3:36316","client":"conn17","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:38.916+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:36320","uuid":{"uuid":{"$uuid":"c960b196-3e04-4bd7-b503-8fa3de9c2795"}},"connectionId":18,"connectionCount":2}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:38.917+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn18","msg":"client metadata","attr":{"remote":"172.19.0.3:36320","client":"conn18","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:38.917+00:00"},"s":"I",  "c":"ACCESS",   "id":20251,   "ctx":"conn18","msg":"Supported SASL mechanisms requested for unknown user","attr":{"user":{"user":"ripes_server","db":"admin"}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:38.917+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn18","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:38.918+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn18","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:36320","isSpeculative":true,"isClusterMember":false,"mechanism":"SCRAM-SHA-256","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":52,"summary":{"0":{"step":1,"step_total":2,"duration_micros":43}}}},"extraInfo":{}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:38.918+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn18","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:38.918+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn18","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:36320","isSpeculative":false,"isClusterMember":false,"mechanism":"SCRAM-SHA-1","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":82,"summary":{"0":{"step":1,"step_total":2,"duration_micros":75}}}},"extraInfo":{}}}
+[36mripes_server |[0m /server/node_modules/mongodb/lib/bulk/common.js:294
+[36mripes_server |[0m             return callback(new MongoBulkWriteError(err, new BulkWriteResult(bulkOperation.s.bulkResult, bulkOperation.isOrdered)));
+[36mripes_server |[0m                             ^
+[36mripes_server |[0m 
+[36mripes_server |[0m MongoBulkWriteError: Authentication failed.
+[36mripes_server |[0m     at resultHandler (/server/node_modules/mongodb/lib/bulk/common.js:294:29)
+[36mripes_server |[0m     at /server/node_modules/mongodb/lib/utils.js:274:66
+[36mripes_server |[0m     at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+[36mripes_server |[0m   ok: 0,
+[36mripes_server |[0m   code: 18,
+[36mripes_server |[0m   codeName: 'AuthenticationFailed',
+[36mripes_server |[0m   connectionGeneration: 0,
+[36mripes_server |[0m   writeErrors: [],
+[36mripes_server |[0m   result: BulkWriteResult {
+[36mripes_server |[0m     insertedCount: 0,
+[36mripes_server |[0m     matchedCount: 0,
+[36mripes_server |[0m     modifiedCount: 0,
+[36mripes_server |[0m     deletedCount: 0,
+[36mripes_server |[0m     upsertedCount: 0,
+[36mripes_server |[0m     upsertedIds: {},
+[36mripes_server |[0m     insertedIds: {
+[36mripes_server |[0m       '0': ObjectId {
+[36mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[36mripes_server |[0m           101, 129, 228,  30, 173,
+[36mripes_server |[0m           102,  57,  78, 117,  82,
+[36mripes_server |[0m            20, 203
+[36mripes_server |[0m         ]
+[36mripes_server |[0m       },
+[36mripes_server |[0m       '1': ObjectId {
+[36mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[36mripes_server |[0m           101, 129, 228,  30, 173,
+[36mripes_server |[0m           102,  57,  78, 117,  82,
+[36mripes_server |[0m            20, 204
+[36mripes_server |[0m         ]
+[36mripes_server |[0m       },
+[36mripes_server |[0m       '2': ObjectId {
+[36mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[36mripes_server |[0m           101, 129, 228,  30, 173,
+[36mripes_server |[0m           102,  57,  78, 117,  82,
+[36mripes_server |[0m            20, 205
+[36mripes_server |[0m         ]
+[36mripes_server |[0m       },
+[36mripes_server |[0m       '3': ObjectId {
+[36mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[36mripes_server |[0m           101, 129, 228,  30, 173,
+[36mripes_server |[0m           102,  57,  78, 117,  82,
+[36mripes_server |[0m            20, 206
+[36mripes_server |[0m         ]
+[36mripes_server |[0m       }
+[36mripes_server |[0m     }
+[36mripes_server |[0m   },
+[36mripes_server |[0m   [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+[36mripes_server |[0m }
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:38.924+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn18","msg":"Connection ended","attr":{"remote":"172.19.0.3:36320","uuid":{"uuid":{"$uuid":"c960b196-3e04-4bd7-b503-8fa3de9c2795"}},"connectionId":18,"connectionCount":1}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:42:38.924+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn17","msg":"Connection ended","attr":{"remote":"172.19.0.3:36316","uuid":{"uuid":{"$uuid":"17a1ff71-0198-4b8e-9730-5504fb7382ce"}},"connectionId":17,"connectionCount":0}}
+[34;1mripes_server exited with code 1
+[0m[33mripes_server |[0m mongodb://ripes_server:a_real_password@mongodb:27017
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:43:04.977+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:37402","uuid":{"uuid":{"$uuid":"4ee134c9-ebd3-4236-835c-97b842b09f1b"}},"connectionId":19,"connectionCount":1}}
+[33mripes_server |[0m info server Listening to ripes_server:3000
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:43:04.980+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn19","msg":"client metadata","attr":{"remote":"172.19.0.3:37402","client":"conn19","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:43:04.985+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:37418","uuid":{"uuid":{"$uuid":"6aa1ba8a-8fc6-4ad2-9da2-74b680f789a7"}},"connectionId":20,"connectionCount":2}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:43:04.986+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn20","msg":"client metadata","attr":{"remote":"172.19.0.3:37418","client":"conn20","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:43:04.986+00:00"},"s":"I",  "c":"ACCESS",   "id":20251,   "ctx":"conn20","msg":"Supported SASL mechanisms requested for unknown user","attr":{"user":{"user":"ripes_server","db":"admin"}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:43:04.986+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn20","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:43:04.986+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn20","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:37418","isSpeculative":true,"isClusterMember":false,"mechanism":"SCRAM-SHA-256","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":71,"summary":{"0":{"step":1,"step_total":2,"duration_micros":59}}}},"extraInfo":{}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:43:04.987+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn20","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:43:04.987+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn20","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:37418","isSpeculative":false,"isClusterMember":false,"mechanism":"SCRAM-SHA-1","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":58,"summary":{"0":{"step":1,"step_total":2,"duration_micros":50}}}},"extraInfo":{}}}
+[33mripes_server |[0m /server/node_modules/mongodb/lib/bulk/common.js:294
+[33mripes_server |[0m             return callback(new MongoBulkWriteError(err, new BulkWriteResult(bulkOperation.s.bulkResult, bulkOperation.isOrdered)));
+[33mripes_server |[0m                             ^
+[33mripes_server |[0m 
+[33mripes_server |[0m MongoBulkWriteError: Authentication failed.
+[33mripes_server |[0m     at resultHandler (/server/node_modules/mongodb/lib/bulk/common.js:294:29)
+[33mripes_server |[0m     at /server/node_modules/mongodb/lib/utils.js:274:66
+[33mripes_server |[0m     at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+[33mripes_server |[0m   ok: 0,
+[33mripes_server |[0m   code: 18,
+[33mripes_server |[0m   codeName: 'AuthenticationFailed',
+[33mripes_server |[0m   connectionGeneration: 0,
+[33mripes_server |[0m   writeErrors: [],
+[33mripes_server |[0m   result: BulkWriteResult {
+[33mripes_server |[0m     insertedCount: 0,
+[33mripes_server |[0m     matchedCount: 0,
+[33mripes_server |[0m     modifiedCount: 0,
+[33mripes_server |[0m     deletedCount: 0,
+[33mripes_server |[0m     upsertedCount: 0,
+[33mripes_server |[0m     upsertedIds: {},
+[33mripes_server |[0m     insertedIds: {
+[33mripes_server |[0m       '0': ObjectId {
+[33mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[33mripes_server |[0m           101, 129, 228,  56,
+[33mripes_server |[0m           197, 194,  27,  10,
+[33mripes_server |[0m           151, 225, 182, 200
+[33mripes_server |[0m         ]
+[33mripes_server |[0m       },
+[33mripes_server |[0m       '1': ObjectId {
+[33mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[33mripes_server |[0m           101, 129, 228,  56,
+[33mripes_server |[0m           197, 194,  27,  10,
+[33mripes_server |[0m           151, 225, 182, 201
+[33mripes_server |[0m         ]
+[33mripes_server |[0m       },
+[33mripes_server |[0m       '2': ObjectId {
+[33mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[33mripes_server |[0m           101, 129, 228,  56,
+[33mripes_server |[0m           197, 194,  27,  10,
+[33mripes_server |[0m           151, 225, 182, 202
+[33mripes_server |[0m         ]
+[33mripes_server |[0m       },
+[33mripes_server |[0m       '3': ObjectId {
+[33mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[33mripes_server |[0m           101, 129, 228,  56,
+[33mripes_server |[0m           197, 194,  27,  10,
+[33mripes_server |[0m           151, 225, 182, 203
+[33mripes_server |[0m         ]
+[33mripes_server |[0m       }
+[33mripes_server |[0m     }
+[33mripes_server |[0m   },
+[33mripes_server |[0m   [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+[33mripes_server |[0m }
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:43:04.992+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn20","msg":"Connection ended","attr":{"remote":"172.19.0.3:37418","uuid":{"uuid":{"$uuid":"6aa1ba8a-8fc6-4ad2-9da2-74b680f789a7"}},"connectionId":20,"connectionCount":1}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:43:04.992+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn19","msg":"Connection ended","attr":{"remote":"172.19.0.3:37402","uuid":{"uuid":{"$uuid":"4ee134c9-ebd3-4236-835c-97b842b09f1b"}},"connectionId":19,"connectionCount":0}}
+[36mripes_server exited with code 1
+[0m[32mripes_server |[0m mongodb://ripes_server:a_real_password@mongodb:27017
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:43:56.620+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:44230","uuid":{"uuid":{"$uuid":"2239273e-5019-4933-a784-4f02eb6e6463"}},"connectionId":21,"connectionCount":1}}
+[32mripes_server |[0m info server Listening to ripes_server:3000
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:43:56.623+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn21","msg":"client metadata","attr":{"remote":"172.19.0.3:44230","client":"conn21","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:43:56.628+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:44234","uuid":{"uuid":{"$uuid":"72384826-2280-4be3-b17e-d2777338f80c"}},"connectionId":22,"connectionCount":2}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:43:56.629+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn22","msg":"client metadata","attr":{"remote":"172.19.0.3:44234","client":"conn22","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:43:56.629+00:00"},"s":"I",  "c":"ACCESS",   "id":20251,   "ctx":"conn22","msg":"Supported SASL mechanisms requested for unknown user","attr":{"user":{"user":"ripes_server","db":"admin"}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:43:56.629+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn22","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:43:56.629+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn22","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:44234","isSpeculative":true,"isClusterMember":false,"mechanism":"SCRAM-SHA-256","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":88,"summary":{"0":{"step":1,"step_total":2,"duration_micros":77}}}},"extraInfo":{}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:43:56.630+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn22","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:43:56.630+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn22","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:44234","isSpeculative":false,"isClusterMember":false,"mechanism":"SCRAM-SHA-1","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":76,"summary":{"0":{"step":1,"step_total":2,"duration_micros":69}}}},"extraInfo":{}}}
+[32mripes_server |[0m /server/node_modules/mongodb/lib/bulk/common.js:294
+[32mripes_server |[0m             return callback(new MongoBulkWriteError(err, new BulkWriteResult(bulkOperation.s.bulkResult, bulkOperation.isOrdered)));
+[32mripes_server |[0m                             ^
+[32mripes_server |[0m 
+[32mripes_server |[0m MongoBulkWriteError: Authentication failed.
+[32mripes_server |[0m     at resultHandler (/server/node_modules/mongodb/lib/bulk/common.js:294:29)
+[32mripes_server |[0m     at /server/node_modules/mongodb/lib/utils.js:274:66
+[32mripes_server |[0m     at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+[32mripes_server |[0m   ok: 0,
+[32mripes_server |[0m   code: 18,
+[32mripes_server |[0m   codeName: 'AuthenticationFailed',
+[32mripes_server |[0m   connectionGeneration: 0,
+[32mripes_server |[0m   writeErrors: [],
+[32mripes_server |[0m   result: BulkWriteResult {
+[32mripes_server |[0m     insertedCount: 0,
+[32mripes_server |[0m     matchedCount: 0,
+[32mripes_server |[0m     modifiedCount: 0,
+[32mripes_server |[0m     deletedCount: 0,
+[32mripes_server |[0m     upsertedCount: 0,
+[32mripes_server |[0m     upsertedIds: {},
+[32mripes_server |[0m     insertedIds: {
+[32mripes_server |[0m       '0': ObjectId {
+[32mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[32mripes_server |[0m           101, 129, 228, 108, 91,
+[32mripes_server |[0m           110,  70, 167, 111, 20,
+[32mripes_server |[0m            72, 132
+[32mripes_server |[0m         ]
+[32mripes_server |[0m       },
+[32mripes_server |[0m       '1': ObjectId {
+[32mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[32mripes_server |[0m           101, 129, 228, 108, 91,
+[32mripes_server |[0m           110,  70, 167, 111, 20,
+[32mripes_server |[0m            72, 133
+[32mripes_server |[0m         ]
+[32mripes_server |[0m       },
+[32mripes_server |[0m       '2': ObjectId {
+[32mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[32mripes_server |[0m           101, 129, 228, 108, 91,
+[32mripes_server |[0m           110,  70, 167, 111, 20,
+[32mripes_server |[0m            72, 134
+[32mripes_server |[0m         ]
+[32mripes_server |[0m       },
+[32mripes_server |[0m       '3': ObjectId {
+[32mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[32mripes_server |[0m           101, 129, 228, 108, 91,
+[32mripes_server |[0m           110,  70, 167, 111, 20,
+[32mripes_server |[0m            72, 135
+[32mripes_server |[0m         ]
+[32mripes_server |[0m       }
+[32mripes_server |[0m     }
+[32mripes_server |[0m   },
+[32mripes_server |[0m   [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+[32mripes_server |[0m }
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:43:56.636+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn22","msg":"Connection ended","attr":{"remote":"172.19.0.3:44234","uuid":{"uuid":{"$uuid":"72384826-2280-4be3-b17e-d2777338f80c"}},"connectionId":22,"connectionCount":1}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:43:56.636+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn21","msg":"Connection ended","attr":{"remote":"172.19.0.3:44230","uuid":{"uuid":{"$uuid":"2239273e-5019-4933-a784-4f02eb6e6463"}},"connectionId":21,"connectionCount":0}}
+[33mripes_server exited with code 1
+[0m[35mripes_server |[0m mongodb://ripes_server:a_real_password@mongodb:27017
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:44:57.102+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:52906","uuid":{"uuid":{"$uuid":"28ecd77e-5bf6-4a70-b043-59a7330d5a1c"}},"connectionId":23,"connectionCount":1}}
+[35mripes_server |[0m info server Listening to ripes_server:3000
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:44:57.105+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn23","msg":"client metadata","attr":{"remote":"172.19.0.3:52906","client":"conn23","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:44:57.109+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:52918","uuid":{"uuid":{"$uuid":"e8006f7e-82cb-45ce-b564-68d9e9f64ca0"}},"connectionId":24,"connectionCount":2}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:44:57.110+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn24","msg":"client metadata","attr":{"remote":"172.19.0.3:52918","client":"conn24","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:44:57.110+00:00"},"s":"I",  "c":"ACCESS",   "id":20251,   "ctx":"conn24","msg":"Supported SASL mechanisms requested for unknown user","attr":{"user":{"user":"ripes_server","db":"admin"}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:44:57.110+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn24","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:44:57.110+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn24","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:52918","isSpeculative":true,"isClusterMember":false,"mechanism":"SCRAM-SHA-256","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":86,"summary":{"0":{"step":1,"step_total":2,"duration_micros":72}}}},"extraInfo":{}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:44:57.111+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn24","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:44:57.111+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn24","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:52918","isSpeculative":false,"isClusterMember":false,"mechanism":"SCRAM-SHA-1","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":84,"summary":{"0":{"step":1,"step_total":2,"duration_micros":77}}}},"extraInfo":{}}}
+[35mripes_server |[0m /server/node_modules/mongodb/lib/bulk/common.js:294
+[35mripes_server |[0m             return callback(new MongoBulkWriteError(err, new BulkWriteResult(bulkOperation.s.bulkResult, bulkOperation.isOrdered)));
+[35mripes_server |[0m                             ^
+[35mripes_server |[0m 
+[35mripes_server |[0m MongoBulkWriteError: Authentication failed.
+[35mripes_server |[0m     at resultHandler (/server/node_modules/mongodb/lib/bulk/common.js:294:29)
+[35mripes_server |[0m     at /server/node_modules/mongodb/lib/utils.js:274:66
+[35mripes_server |[0m     at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+[35mripes_server |[0m   ok: 0,
+[35mripes_server |[0m   code: 18,
+[35mripes_server |[0m   codeName: 'AuthenticationFailed',
+[35mripes_server |[0m   connectionGeneration: 0,
+[35mripes_server |[0m   writeErrors: [],
+[35mripes_server |[0m   result: BulkWriteResult {
+[35mripes_server |[0m     insertedCount: 0,
+[35mripes_server |[0m     matchedCount: 0,
+[35mripes_server |[0m     modifiedCount: 0,
+[35mripes_server |[0m     deletedCount: 0,
+[35mripes_server |[0m     upsertedCount: 0,
+[35mripes_server |[0m     upsertedIds: {},
+[35mripes_server |[0m     insertedIds: {
+[35mripes_server |[0m       '0': ObjectId {
+[35mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[35mripes_server |[0m           101, 129, 228, 169,
+[35mripes_server |[0m           195, 176,  15, 212,
+[35mripes_server |[0m           247, 234, 232, 180
+[35mripes_server |[0m         ]
+[35mripes_server |[0m       },
+[35mripes_server |[0m       '1': ObjectId {
+[35mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[35mripes_server |[0m           101, 129, 228, 169,
+[35mripes_server |[0m           195, 176,  15, 212,
+[35mripes_server |[0m           247, 234, 232, 181
+[35mripes_server |[0m         ]
+[35mripes_server |[0m       },
+[35mripes_server |[0m       '2': ObjectId {
+[35mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[35mripes_server |[0m           101, 129, 228, 169,
+[35mripes_server |[0m           195, 176,  15, 212,
+[35mripes_server |[0m           247, 234, 232, 182
+[35mripes_server |[0m         ]
+[35mripes_server |[0m       },
+[35mripes_server |[0m       '3': ObjectId {
+[35mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[35mripes_server |[0m           101, 129, 228, 169,
+[35mripes_server |[0m           195, 176,  15, 212,
+[35mripes_server |[0m           247, 234, 232, 183
+[35mripes_server |[0m         ]
+[35mripes_server |[0m       }
+[35mripes_server |[0m     }
+[35mripes_server |[0m   },
+[35mripes_server |[0m   [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+[35mripes_server |[0m }
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:44:57.117+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn24","msg":"Connection ended","attr":{"remote":"172.19.0.3:52918","uuid":{"uuid":{"$uuid":"e8006f7e-82cb-45ce-b564-68d9e9f64ca0"}},"connectionId":24,"connectionCount":1}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:44:57.117+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn23","msg":"Connection ended","attr":{"remote":"172.19.0.3:52906","uuid":{"uuid":{"$uuid":"28ecd77e-5bf6-4a70-b043-59a7330d5a1c"}},"connectionId":23,"connectionCount":0}}
+[32mripes_server exited with code 1
+[0m[34mripes_server |[0m mongodb://ripes_server:a_real_password@mongodb:27017
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:45:57.600+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:47628","uuid":{"uuid":{"$uuid":"d5503040-b677-4221-b2b5-9f68c721dbe3"}},"connectionId":25,"connectionCount":1}}
+[34mripes_server |[0m info server Listening to ripes_server:3000
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:45:57.603+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn25","msg":"client metadata","attr":{"remote":"172.19.0.3:47628","client":"conn25","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:45:57.608+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:47644","uuid":{"uuid":{"$uuid":"3db9150b-9c16-4239-a19d-f0a584ec7bea"}},"connectionId":26,"connectionCount":2}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:45:57.609+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn26","msg":"client metadata","attr":{"remote":"172.19.0.3:47644","client":"conn26","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:45:57.609+00:00"},"s":"I",  "c":"ACCESS",   "id":20251,   "ctx":"conn26","msg":"Supported SASL mechanisms requested for unknown user","attr":{"user":{"user":"ripes_server","db":"admin"}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:45:57.609+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn26","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:45:57.609+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn26","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:47644","isSpeculative":true,"isClusterMember":false,"mechanism":"SCRAM-SHA-256","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":51,"summary":{"0":{"step":1,"step_total":2,"duration_micros":40}}}},"extraInfo":{}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:45:57.610+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn26","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:45:57.610+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn26","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:47644","isSpeculative":false,"isClusterMember":false,"mechanism":"SCRAM-SHA-1","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":84,"summary":{"0":{"step":1,"step_total":2,"duration_micros":76}}}},"extraInfo":{}}}
+[34mripes_server |[0m /server/node_modules/mongodb/lib/bulk/common.js:294
+[34mripes_server |[0m             return callback(new MongoBulkWriteError(err, new BulkWriteResult(bulkOperation.s.bulkResult, bulkOperation.isOrdered)));
+[34mripes_server |[0m                             ^
+[34mripes_server |[0m 
+[34mripes_server |[0m MongoBulkWriteError: Authentication failed.
+[34mripes_server |[0m     at resultHandler (/server/node_modules/mongodb/lib/bulk/common.js:294:29)
+[34mripes_server |[0m     at /server/node_modules/mongodb/lib/utils.js:274:66
+[34mripes_server |[0m     at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+[34mripes_server |[0m   ok: 0,
+[34mripes_server |[0m   code: 18,
+[34mripes_server |[0m   codeName: 'AuthenticationFailed',
+[34mripes_server |[0m   connectionGeneration: 0,
+[34mripes_server |[0m   writeErrors: [],
+[34mripes_server |[0m   result: BulkWriteResult {
+[34mripes_server |[0m     insertedCount: 0,
+[34mripes_server |[0m     matchedCount: 0,
+[34mripes_server |[0m     modifiedCount: 0,
+[34mripes_server |[0m     deletedCount: 0,
+[34mripes_server |[0m     upsertedCount: 0,
+[34mripes_server |[0m     upsertedIds: {},
+[34mripes_server |[0m     insertedIds: {
+[34mripes_server |[0m       '0': ObjectId {
+[34mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[34mripes_server |[0m           101, 129, 228, 229, 221,
+[34mripes_server |[0m            99,  53,  67, 111,  88,
+[34mripes_server |[0m           193, 114
+[34mripes_server |[0m         ]
+[34mripes_server |[0m       },
+[34mripes_server |[0m       '1': ObjectId {
+[34mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[34mripes_server |[0m           101, 129, 228, 229, 221,
+[34mripes_server |[0m            99,  53,  67, 111,  88,
+[34mripes_server |[0m           193, 115
+[34mripes_server |[0m         ]
+[34mripes_server |[0m       },
+[34mripes_server |[0m       '2': ObjectId {
+[34mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[34mripes_server |[0m           101, 129, 228, 229, 221,
+[34mripes_server |[0m            99,  53,  67, 111,  88,
+[34mripes_server |[0m           193, 116
+[34mripes_server |[0m         ]
+[34mripes_server |[0m       },
+[34mripes_server |[0m       '3': ObjectId {
+[34mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[34mripes_server |[0m           101, 129, 228, 229, 221,
+[34mripes_server |[0m            99,  53,  67, 111,  88,
+[34mripes_server |[0m           193, 117
+[34mripes_server |[0m         ]
+[34mripes_server |[0m       }
+[34mripes_server |[0m     }
+[34mripes_server |[0m   },
+[34mripes_server |[0m   [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+[34mripes_server |[0m }
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:45:57.616+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn26","msg":"Connection ended","attr":{"remote":"172.19.0.3:47644","uuid":{"uuid":{"$uuid":"3db9150b-9c16-4239-a19d-f0a584ec7bea"}},"connectionId":26,"connectionCount":1}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:45:57.616+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn25","msg":"Connection ended","attr":{"remote":"172.19.0.3:47628","uuid":{"uuid":{"$uuid":"d5503040-b677-4221-b2b5-9f68c721dbe3"}},"connectionId":25,"connectionCount":0}}
+[35mripes_server exited with code 1
+[0m[36;1mripes_server |[0m mongodb://ripes_server:a_real_password@mongodb:27017
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:46:58.176+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:57360","uuid":{"uuid":{"$uuid":"8ca2e2bb-66ae-4420-8780-f3c1858b0479"}},"connectionId":27,"connectionCount":1}}
+[36;1mripes_server |[0m info server Listening to ripes_server:3000
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:46:58.179+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn27","msg":"client metadata","attr":{"remote":"172.19.0.3:57360","client":"conn27","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:46:58.184+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:57370","uuid":{"uuid":{"$uuid":"de47d808-e163-4409-b739-d5e9fcf365a0"}},"connectionId":28,"connectionCount":2}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:46:58.184+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn28","msg":"client metadata","attr":{"remote":"172.19.0.3:57370","client":"conn28","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:46:58.185+00:00"},"s":"I",  "c":"ACCESS",   "id":20251,   "ctx":"conn28","msg":"Supported SASL mechanisms requested for unknown user","attr":{"user":{"user":"ripes_server","db":"admin"}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:46:58.185+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn28","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:46:58.185+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn28","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:57370","isSpeculative":true,"isClusterMember":false,"mechanism":"SCRAM-SHA-256","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":49,"summary":{"0":{"step":1,"step_total":2,"duration_micros":40}}}},"extraInfo":{}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:46:58.185+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn28","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:46:58.186+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn28","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:57370","isSpeculative":false,"isClusterMember":false,"mechanism":"SCRAM-SHA-1","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":161,"summary":{"0":{"step":1,"step_total":2,"duration_micros":153}}}},"extraInfo":{}}}
+[36;1mripes_server |[0m /server/node_modules/mongodb/lib/bulk/common.js:294
+[36;1mripes_server |[0m             return callback(new MongoBulkWriteError(err, new BulkWriteResult(bulkOperation.s.bulkResult, bulkOperation.isOrdered)));
+[36;1mripes_server |[0m                             ^
+[36;1mripes_server |[0m 
+[36;1mripes_server |[0m MongoBulkWriteError: Authentication failed.
+[36;1mripes_server |[0m     at resultHandler (/server/node_modules/mongodb/lib/bulk/common.js:294:29)
+[36;1mripes_server |[0m     at /server/node_modules/mongodb/lib/utils.js:274:66
+[36;1mripes_server |[0m     at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+[36;1mripes_server |[0m   ok: 0,
+[36;1mripes_server |[0m   code: 18,
+[36;1mripes_server |[0m   codeName: 'AuthenticationFailed',
+[36;1mripes_server |[0m   connectionGeneration: 0,
+[36;1mripes_server |[0m   writeErrors: [],
+[36;1mripes_server |[0m   result: BulkWriteResult {
+[36;1mripes_server |[0m     insertedCount: 0,
+[36;1mripes_server |[0m     matchedCount: 0,
+[36;1mripes_server |[0m     modifiedCount: 0,
+[36;1mripes_server |[0m     deletedCount: 0,
+[36;1mripes_server |[0m     upsertedCount: 0,
+[36;1mripes_server |[0m     upsertedIds: {},
+[36;1mripes_server |[0m     insertedIds: {
+[36;1mripes_server |[0m       '0': ObjectId {
+[36;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[36;1mripes_server |[0m           101, 129, 229,  34,  65,
+[36;1mripes_server |[0m             4, 201, 197, 214, 196,
+[36;1mripes_server |[0m            85,  15
+[36;1mripes_server |[0m         ]
+[36;1mripes_server |[0m       },
+[36;1mripes_server |[0m       '1': ObjectId {
+[36;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[36;1mripes_server |[0m           101, 129, 229,  34,  65,
+[36;1mripes_server |[0m             4, 201, 197, 214, 196,
+[36;1mripes_server |[0m            85,  16
+[36;1mripes_server |[0m         ]
+[36;1mripes_server |[0m       },
+[36;1mripes_server |[0m       '2': ObjectId {
+[36;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[36;1mripes_server |[0m           101, 129, 229,  34,  65,
+[36;1mripes_server |[0m             4, 201, 197, 214, 196,
+[36;1mripes_server |[0m            85,  17
+[36;1mripes_server |[0m         ]
+[36;1mripes_server |[0m       },
+[36;1mripes_server |[0m       '3': ObjectId {
+[36;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[36;1mripes_server |[0m           101, 129, 229,  34,  65,
+[36;1mripes_server |[0m             4, 201, 197, 214, 196,
+[36;1mripes_server |[0m            85,  18
+[36;1mripes_server |[0m         ]
+[36;1mripes_server |[0m       }
+[36;1mripes_server |[0m     }
+[36;1mripes_server |[0m   },
+[36;1mripes_server |[0m   [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+[36;1mripes_server |[0m }
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:46:58.192+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn28","msg":"Connection ended","attr":{"remote":"172.19.0.3:57370","uuid":{"uuid":{"$uuid":"de47d808-e163-4409-b739-d5e9fcf365a0"}},"connectionId":28,"connectionCount":1}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:46:58.192+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn27","msg":"Connection ended","attr":{"remote":"172.19.0.3:57360","uuid":{"uuid":{"$uuid":"8ca2e2bb-66ae-4420-8780-f3c1858b0479"}},"connectionId":27,"connectionCount":0}}
+[34mripes_server exited with code 1
+[0m[33;1mripes_server |[0m mongodb://ripes_server:a_real_password@mongodb:27017
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:47:58.683+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:39258","uuid":{"uuid":{"$uuid":"b046851a-c37a-439d-b803-3c055601bc8f"}},"connectionId":29,"connectionCount":1}}
+[33;1mripes_server |[0m info server Listening to ripes_server:3000
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:47:58.686+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn29","msg":"client metadata","attr":{"remote":"172.19.0.3:39258","client":"conn29","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:47:58.691+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:39268","uuid":{"uuid":{"$uuid":"5fdae985-471c-46bc-9053-1b7dcc6e7766"}},"connectionId":30,"connectionCount":2}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:47:58.692+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn30","msg":"client metadata","attr":{"remote":"172.19.0.3:39268","client":"conn30","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:47:58.692+00:00"},"s":"I",  "c":"ACCESS",   "id":20251,   "ctx":"conn30","msg":"Supported SASL mechanisms requested for unknown user","attr":{"user":{"user":"ripes_server","db":"admin"}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:47:58.692+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn30","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:47:58.692+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn30","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:39268","isSpeculative":true,"isClusterMember":false,"mechanism":"SCRAM-SHA-256","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":62,"summary":{"0":{"step":1,"step_total":2,"duration_micros":47}}}},"extraInfo":{}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:47:58.693+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn30","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:47:58.693+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn30","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:39268","isSpeculative":false,"isClusterMember":false,"mechanism":"SCRAM-SHA-1","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":62,"summary":{"0":{"step":1,"step_total":2,"duration_micros":54}}}},"extraInfo":{}}}
+[33;1mripes_server |[0m /server/node_modules/mongodb/lib/bulk/common.js:294
+[33;1mripes_server |[0m             return callback(new MongoBulkWriteError(err, new BulkWriteResult(bulkOperation.s.bulkResult, bulkOperation.isOrdered)));
+[33;1mripes_server |[0m                             ^
+[33;1mripes_server |[0m 
+[33;1mripes_server |[0m MongoBulkWriteError: Authentication failed.
+[33;1mripes_server |[0m     at resultHandler (/server/node_modules/mongodb/lib/bulk/common.js:294:29)
+[33;1mripes_server |[0m     at /server/node_modules/mongodb/lib/utils.js:274:66
+[33;1mripes_server |[0m     at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+[33;1mripes_server |[0m   ok: 0,
+[33;1mripes_server |[0m   code: 18,
+[33;1mripes_server |[0m   codeName: 'AuthenticationFailed',
+[33;1mripes_server |[0m   connectionGeneration: 0,
+[33;1mripes_server |[0m   writeErrors: [],
+[33;1mripes_server |[0m   result: BulkWriteResult {
+[33;1mripes_server |[0m     insertedCount: 0,
+[33;1mripes_server |[0m     matchedCount: 0,
+[33;1mripes_server |[0m     modifiedCount: 0,
+[33;1mripes_server |[0m     deletedCount: 0,
+[33;1mripes_server |[0m     upsertedCount: 0,
+[33;1mripes_server |[0m     upsertedIds: {},
+[33;1mripes_server |[0m     insertedIds: {
+[33;1mripes_server |[0m       '0': ObjectId {
+[33;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[33;1mripes_server |[0m           101, 129, 229, 94,  46,
+[33;1mripes_server |[0m            23,  13,  51,  9, 163,
+[33;1mripes_server |[0m            47, 164
+[33;1mripes_server |[0m         ]
+[33;1mripes_server |[0m       },
+[33;1mripes_server |[0m       '1': ObjectId {
+[33;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[33;1mripes_server |[0m           101, 129, 229, 94,  46,
+[33;1mripes_server |[0m            23,  13,  51,  9, 163,
+[33;1mripes_server |[0m            47, 165
+[33;1mripes_server |[0m         ]
+[33;1mripes_server |[0m       },
+[33;1mripes_server |[0m       '2': ObjectId {
+[33;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[33;1mripes_server |[0m           101, 129, 229, 94,  46,
+[33;1mripes_server |[0m            23,  13,  51,  9, 163,
+[33;1mripes_server |[0m            47, 166
+[33;1mripes_server |[0m         ]
+[33;1mripes_server |[0m       },
+[33;1mripes_server |[0m       '3': ObjectId {
+[33;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[33;1mripes_server |[0m           101, 129, 229, 94,  46,
+[33;1mripes_server |[0m            23,  13,  51,  9, 163,
+[33;1mripes_server |[0m            47, 167
+[33;1mripes_server |[0m         ]
+[33;1mripes_server |[0m       }
+[33;1mripes_server |[0m     }
+[33;1mripes_server |[0m   },
+[33;1mripes_server |[0m   [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+[33;1mripes_server |[0m }
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:47:58.699+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn30","msg":"Connection ended","attr":{"remote":"172.19.0.3:39268","uuid":{"uuid":{"$uuid":"5fdae985-471c-46bc-9053-1b7dcc6e7766"}},"connectionId":30,"connectionCount":1}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:47:58.699+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn29","msg":"Connection ended","attr":{"remote":"172.19.0.3:39258","uuid":{"uuid":{"$uuid":"b046851a-c37a-439d-b803-3c055601bc8f"}},"connectionId":29,"connectionCount":0}}
+[36;1mripes_server exited with code 1
+[0m[32;1mripes_server |[0m mongodb://ripes_server:a_real_password@mongodb:27017
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:48:59.203+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:36906","uuid":{"uuid":{"$uuid":"81657004-6bcf-4df8-b995-ac5a520b00ff"}},"connectionId":31,"connectionCount":1}}
+[32;1mripes_server |[0m info server Listening to ripes_server:3000
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:48:59.207+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn31","msg":"client metadata","attr":{"remote":"172.19.0.3:36906","client":"conn31","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:48:59.211+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:36922","uuid":{"uuid":{"$uuid":"c94994d3-b9ac-40eb-b8b8-7f47d974691f"}},"connectionId":32,"connectionCount":2}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:48:59.212+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn32","msg":"client metadata","attr":{"remote":"172.19.0.3:36922","client":"conn32","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:48:59.212+00:00"},"s":"I",  "c":"ACCESS",   "id":20251,   "ctx":"conn32","msg":"Supported SASL mechanisms requested for unknown user","attr":{"user":{"user":"ripes_server","db":"admin"}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:48:59.212+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn32","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:48:59.212+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn32","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:36922","isSpeculative":true,"isClusterMember":false,"mechanism":"SCRAM-SHA-256","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":56,"summary":{"0":{"step":1,"step_total":2,"duration_micros":45}}}},"extraInfo":{}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:48:59.213+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn32","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:48:59.213+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn32","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:36922","isSpeculative":false,"isClusterMember":false,"mechanism":"SCRAM-SHA-1","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":109,"summary":{"0":{"step":1,"step_total":2,"duration_micros":101}}}},"extraInfo":{}}}
+[32;1mripes_server |[0m /server/node_modules/mongodb/lib/bulk/common.js:294
+[32;1mripes_server |[0m             return callback(new MongoBulkWriteError(err, new BulkWriteResult(bulkOperation.s.bulkResult, bulkOperation.isOrdered)));
+[32;1mripes_server |[0m                             ^
+[32;1mripes_server |[0m 
+[32;1mripes_server |[0m MongoBulkWriteError: Authentication failed.
+[32;1mripes_server |[0m     at resultHandler (/server/node_modules/mongodb/lib/bulk/common.js:294:29)
+[32;1mripes_server |[0m     at /server/node_modules/mongodb/lib/utils.js:274:66
+[32;1mripes_server |[0m     at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+[32;1mripes_server |[0m   ok: 0,
+[32;1mripes_server |[0m   code: 18,
+[32;1mripes_server |[0m   codeName: 'AuthenticationFailed',
+[32;1mripes_server |[0m   connectionGeneration: 0,
+[32;1mripes_server |[0m   writeErrors: [],
+[32;1mripes_server |[0m   result: BulkWriteResult {
+[32;1mripes_server |[0m     insertedCount: 0,
+[32;1mripes_server |[0m     matchedCount: 0,
+[32;1mripes_server |[0m     modifiedCount: 0,
+[32;1mripes_server |[0m     deletedCount: 0,
+[32;1mripes_server |[0m     upsertedCount: 0,
+[32;1mripes_server |[0m     upsertedIds: {},
+[32;1mripes_server |[0m     insertedIds: {
+[32;1mripes_server |[0m       '0': ObjectId {
+[32;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[32;1mripes_server |[0m           101, 129, 229, 155,
+[32;1mripes_server |[0m           232, 185, 251, 180,
+[32;1mripes_server |[0m            36, 242,   7, 212
+[32;1mripes_server |[0m         ]
+[32;1mripes_server |[0m       },
+[32;1mripes_server |[0m       '1': ObjectId {
+[32;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[32;1mripes_server |[0m           101, 129, 229, 155,
+[32;1mripes_server |[0m           232, 185, 251, 180,
+[32;1mripes_server |[0m            36, 242,   7, 213
+[32;1mripes_server |[0m         ]
+[32;1mripes_server |[0m       },
+[32;1mripes_server |[0m       '2': ObjectId {
+[32;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[32;1mripes_server |[0m           101, 129, 229, 155,
+[32;1mripes_server |[0m           232, 185, 251, 180,
+[32;1mripes_server |[0m            36, 242,   7, 214
+[32;1mripes_server |[0m         ]
+[32;1mripes_server |[0m       },
+[32;1mripes_server |[0m       '3': ObjectId {
+[32;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[32;1mripes_server |[0m           101, 129, 229, 155,
+[32;1mripes_server |[0m           232, 185, 251, 180,
+[32;1mripes_server |[0m            36, 242,   7, 215
+[32;1mripes_server |[0m         ]
+[32;1mripes_server |[0m       }
+[32;1mripes_server |[0m     }
+[32;1mripes_server |[0m   },
+[32;1mripes_server |[0m   [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+[32;1mripes_server |[0m }
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:48:59.219+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn32","msg":"Connection ended","attr":{"remote":"172.19.0.3:36922","uuid":{"uuid":{"$uuid":"c94994d3-b9ac-40eb-b8b8-7f47d974691f"}},"connectionId":32,"connectionCount":1}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:48:59.219+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn31","msg":"Connection ended","attr":{"remote":"172.19.0.3:36906","uuid":{"uuid":{"$uuid":"81657004-6bcf-4df8-b995-ac5a520b00ff"}},"connectionId":31,"connectionCount":0}}
+[33;1mripes_server exited with code 1
+[0m[35;1mripes_server |[0m mongodb://ripes_server:a_real_password@mongodb:27017
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:49:59.722+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:33498","uuid":{"uuid":{"$uuid":"dcc27312-366b-49db-b51c-b18c27b00d57"}},"connectionId":33,"connectionCount":1}}
+[35;1mripes_server |[0m info server Listening to ripes_server:3000
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:49:59.726+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn33","msg":"client metadata","attr":{"remote":"172.19.0.3:33498","client":"conn33","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:49:59.730+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:33514","uuid":{"uuid":{"$uuid":"9c54f347-34fa-4112-8c29-cf756e3cb591"}},"connectionId":34,"connectionCount":2}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:49:59.731+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn34","msg":"client metadata","attr":{"remote":"172.19.0.3:33514","client":"conn34","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:49:59.731+00:00"},"s":"I",  "c":"ACCESS",   "id":20251,   "ctx":"conn34","msg":"Supported SASL mechanisms requested for unknown user","attr":{"user":{"user":"ripes_server","db":"admin"}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:49:59.731+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn34","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:49:59.731+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn34","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:33514","isSpeculative":true,"isClusterMember":false,"mechanism":"SCRAM-SHA-256","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":60,"summary":{"0":{"step":1,"step_total":2,"duration_micros":48}}}},"extraInfo":{}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:49:59.732+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn34","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:49:59.732+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn34","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:33514","isSpeculative":false,"isClusterMember":false,"mechanism":"SCRAM-SHA-1","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":70,"summary":{"0":{"step":1,"step_total":2,"duration_micros":60}}}},"extraInfo":{}}}
+[35;1mripes_server |[0m /server/node_modules/mongodb/lib/bulk/common.js:294
+[35;1mripes_server |[0m             return callback(new MongoBulkWriteError(err, new BulkWriteResult(bulkOperation.s.bulkResult, bulkOperation.isOrdered)));
+[35;1mripes_server |[0m                             ^
+[35;1mripes_server |[0m 
+[35;1mripes_server |[0m MongoBulkWriteError: Authentication failed.
+[35;1mripes_server |[0m     at resultHandler (/server/node_modules/mongodb/lib/bulk/common.js:294:29)
+[35;1mripes_server |[0m     at /server/node_modules/mongodb/lib/utils.js:274:66
+[35;1mripes_server |[0m     at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+[35;1mripes_server |[0m   ok: 0,
+[35;1mripes_server |[0m   code: 18,
+[35;1mripes_server |[0m   codeName: 'AuthenticationFailed',
+[35;1mripes_server |[0m   connectionGeneration: 0,
+[35;1mripes_server |[0m   writeErrors: [],
+[35;1mripes_server |[0m   result: BulkWriteResult {
+[35;1mripes_server |[0m     insertedCount: 0,
+[35;1mripes_server |[0m     matchedCount: 0,
+[35;1mripes_server |[0m     modifiedCount: 0,
+[35;1mripes_server |[0m     deletedCount: 0,
+[35;1mripes_server |[0m     upsertedCount: 0,
+[35;1mripes_server |[0m     upsertedIds: {},
+[35;1mripes_server |[0m     insertedIds: {
+[35;1mripes_server |[0m       '0': ObjectId {
+[35;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[35;1mripes_server |[0m           101, 129, 229, 215, 110,
+[35;1mripes_server |[0m           132, 108,  88,  75,  68,
+[35;1mripes_server |[0m            19, 233
+[35;1mripes_server |[0m         ]
+[35;1mripes_server |[0m       },
+[35;1mripes_server |[0m       '1': ObjectId {
+[35;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[35;1mripes_server |[0m           101, 129, 229, 215, 110,
+[35;1mripes_server |[0m           132, 108,  88,  75,  68,
+[35;1mripes_server |[0m            19, 234
+[35;1mripes_server |[0m         ]
+[35;1mripes_server |[0m       },
+[35;1mripes_server |[0m       '2': ObjectId {
+[35;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[35;1mripes_server |[0m           101, 129, 229, 215, 110,
+[35;1mripes_server |[0m           132, 108,  88,  75,  68,
+[35;1mripes_server |[0m            19, 235
+[35;1mripes_server |[0m         ]
+[35;1mripes_server |[0m       },
+[35;1mripes_server |[0m       '3': ObjectId {
+[35;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[35;1mripes_server |[0m           101, 129, 229, 215, 110,
+[35;1mripes_server |[0m           132, 108,  88,  75,  68,
+[35;1mripes_server |[0m            19, 236
+[35;1mripes_server |[0m         ]
+[35;1mripes_server |[0m       }
+[35;1mripes_server |[0m     }
+[35;1mripes_server |[0m   },
+[35;1mripes_server |[0m   [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+[35;1mripes_server |[0m }
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:49:59.737+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn34","msg":"Connection ended","attr":{"remote":"172.19.0.3:33514","uuid":{"uuid":{"$uuid":"9c54f347-34fa-4112-8c29-cf756e3cb591"}},"connectionId":34,"connectionCount":1}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:49:59.737+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn33","msg":"Connection ended","attr":{"remote":"172.19.0.3:33498","uuid":{"uuid":{"$uuid":"dcc27312-366b-49db-b51c-b18c27b00d57"}},"connectionId":33,"connectionCount":0}}
+[32;1mripes_server exited with code 1
+[0m[34;1mripes_server |[0m mongodb://ripes_server:a_real_password@mongodb:27017
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:51:00.139+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:55260","uuid":{"uuid":{"$uuid":"55fe27d9-ef66-4112-af4a-548264f7070d"}},"connectionId":35,"connectionCount":1}}
+[34;1mripes_server |[0m info server Listening to ripes_server:3000
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:51:00.142+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn35","msg":"client metadata","attr":{"remote":"172.19.0.3:55260","client":"conn35","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:51:00.147+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:55270","uuid":{"uuid":{"$uuid":"6fd8fbee-47ab-4d95-9ec3-5ea9fc6258f4"}},"connectionId":36,"connectionCount":2}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:51:00.148+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn36","msg":"client metadata","attr":{"remote":"172.19.0.3:55270","client":"conn36","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:51:00.148+00:00"},"s":"I",  "c":"ACCESS",   "id":20251,   "ctx":"conn36","msg":"Supported SASL mechanisms requested for unknown user","attr":{"user":{"user":"ripes_server","db":"admin"}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:51:00.148+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn36","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:51:00.148+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn36","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:55270","isSpeculative":true,"isClusterMember":false,"mechanism":"SCRAM-SHA-256","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":110,"summary":{"0":{"step":1,"step_total":2,"duration_micros":88}}}},"extraInfo":{}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:51:00.149+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn36","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:51:00.149+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn36","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:55270","isSpeculative":false,"isClusterMember":false,"mechanism":"SCRAM-SHA-1","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":89,"summary":{"0":{"step":1,"step_total":2,"duration_micros":77}}}},"extraInfo":{}}}
+[34;1mripes_server |[0m /server/node_modules/mongodb/lib/bulk/common.js:294
+[34;1mripes_server |[0m             return callback(new MongoBulkWriteError(err, new BulkWriteResult(bulkOperation.s.bulkResult, bulkOperation.isOrdered)));
+[34;1mripes_server |[0m                             ^
+[34;1mripes_server |[0m 
+[34;1mripes_server |[0m MongoBulkWriteError: Authentication failed.
+[34;1mripes_server |[0m     at resultHandler (/server/node_modules/mongodb/lib/bulk/common.js:294:29)
+[34;1mripes_server |[0m     at /server/node_modules/mongodb/lib/utils.js:274:66
+[34;1mripes_server |[0m     at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+[34;1mripes_server |[0m   ok: 0,
+[34;1mripes_server |[0m   code: 18,
+[34;1mripes_server |[0m   codeName: 'AuthenticationFailed',
+[34;1mripes_server |[0m   connectionGeneration: 0,
+[34;1mripes_server |[0m   writeErrors: [],
+[34;1mripes_server |[0m   result: BulkWriteResult {
+[34;1mripes_server |[0m     insertedCount: 0,
+[34;1mripes_server |[0m     matchedCount: 0,
+[34;1mripes_server |[0m     modifiedCount: 0,
+[34;1mripes_server |[0m     deletedCount: 0,
+[34;1mripes_server |[0m     upsertedCount: 0,
+[34;1mripes_server |[0m     upsertedIds: {},
+[34;1mripes_server |[0m     insertedIds: {
+[34;1mripes_server |[0m       '0': ObjectId {
+[34;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[34;1mripes_server |[0m           101, 129, 230,  20, 125,
+[34;1mripes_server |[0m             8,  16, 253, 131,  64,
+[34;1mripes_server |[0m            48,  80
+[34;1mripes_server |[0m         ]
+[34;1mripes_server |[0m       },
+[34;1mripes_server |[0m       '1': ObjectId {
+[34;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[34;1mripes_server |[0m           101, 129, 230,  20, 125,
+[34;1mripes_server |[0m             8,  16, 253, 131,  64,
+[34;1mripes_server |[0m            48,  81
+[34;1mripes_server |[0m         ]
+[34;1mripes_server |[0m       },
+[34;1mripes_server |[0m       '2': ObjectId {
+[34;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[34;1mripes_server |[0m           101, 129, 230,  20, 125,
+[34;1mripes_server |[0m             8,  16, 253, 131,  64,
+[34;1mripes_server |[0m            48,  82
+[34;1mripes_server |[0m         ]
+[34;1mripes_server |[0m       },
+[34;1mripes_server |[0m       '3': ObjectId {
+[34;1mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[34;1mripes_server |[0m           101, 129, 230,  20, 125,
+[34;1mripes_server |[0m             8,  16, 253, 131,  64,
+[34;1mripes_server |[0m            48,  83
+[34;1mripes_server |[0m         ]
+[34;1mripes_server |[0m       }
+[34;1mripes_server |[0m     }
+[34;1mripes_server |[0m   },
+[34;1mripes_server |[0m   [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+[34;1mripes_server |[0m }
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:51:00.155+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn36","msg":"Connection ended","attr":{"remote":"172.19.0.3:55270","uuid":{"uuid":{"$uuid":"6fd8fbee-47ab-4d95-9ec3-5ea9fc6258f4"}},"connectionId":36,"connectionCount":1}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:51:00.155+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn35","msg":"Connection ended","attr":{"remote":"172.19.0.3:55260","uuid":{"uuid":{"$uuid":"55fe27d9-ef66-4112-af4a-548264f7070d"}},"connectionId":35,"connectionCount":0}}
+[35;1mripes_server exited with code 1
+[0m[36mripes_server |[0m mongodb://ripes_server:a_real_password@mongodb:27017
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:52:00.620+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:47250","uuid":{"uuid":{"$uuid":"51bcc074-5085-4016-83f7-11cec8f60e0d"}},"connectionId":37,"connectionCount":1}}
+[36mripes_server |[0m info server Listening to ripes_server:3000
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:52:00.623+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn37","msg":"client metadata","attr":{"remote":"172.19.0.3:47250","client":"conn37","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:52:00.628+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:47264","uuid":{"uuid":{"$uuid":"1441fd4d-33cd-454b-a568-332f39fc414d"}},"connectionId":38,"connectionCount":2}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:52:00.629+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn38","msg":"client metadata","attr":{"remote":"172.19.0.3:47264","client":"conn38","doc":{"driver":{"name":"nodejs","version":"6.3.0"},"platform":"Node.js v16.13.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-39-generic","type":"Linux"}}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:52:00.629+00:00"},"s":"I",  "c":"ACCESS",   "id":20251,   "ctx":"conn38","msg":"Supported SASL mechanisms requested for unknown user","attr":{"user":{"user":"ripes_server","db":"admin"}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:52:00.629+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn38","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:52:00.629+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn38","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:47264","isSpeculative":true,"isClusterMember":false,"mechanism":"SCRAM-SHA-256","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":97,"summary":{"0":{"step":1,"step_total":2,"duration_micros":87}}}},"extraInfo":{}}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:52:00.630+00:00"},"s":"I",  "c":"ACCESS",   "id":6788604, "ctx":"conn38","msg":"Auth metrics report","attr":{"metric":"acquireUser","micros":0}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:52:00.630+00:00"},"s":"I",  "c":"ACCESS",   "id":5286307, "ctx":"conn38","msg":"Failed to authenticate","attr":{"client":"172.19.0.3:47264","isSpeculative":false,"isClusterMember":false,"mechanism":"SCRAM-SHA-1","user":"ripes_server","db":"admin","error":"UserNotFound: Could not find user \"ripes_server\" for db \"admin\"","result":11,"metrics":{"conversation_duration":{"micros":80,"summary":{"0":{"step":1,"step_total":2,"duration_micros":70}}}},"extraInfo":{}}}
+[36mripes_server |[0m /server/node_modules/mongodb/lib/bulk/common.js:294
+[36mripes_server |[0m             return callback(new MongoBulkWriteError(err, new BulkWriteResult(bulkOperation.s.bulkResult, bulkOperation.isOrdered)));
+[36mripes_server |[0m                             ^
+[36mripes_server |[0m 
+[36mripes_server |[0m MongoBulkWriteError: Authentication failed.
+[36mripes_server |[0m     at resultHandler (/server/node_modules/mongodb/lib/bulk/common.js:294:29)
+[36mripes_server |[0m     at /server/node_modules/mongodb/lib/utils.js:274:66
+[36mripes_server |[0m     at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+[36mripes_server |[0m   ok: 0,
+[36mripes_server |[0m   code: 18,
+[36mripes_server |[0m   codeName: 'AuthenticationFailed',
+[36mripes_server |[0m   connectionGeneration: 0,
+[36mripes_server |[0m   writeErrors: [],
+[36mripes_server |[0m   result: BulkWriteResult {
+[36mripes_server |[0m     insertedCount: 0,
+[36mripes_server |[0m     matchedCount: 0,
+[36mripes_server |[0m     modifiedCount: 0,
+[36mripes_server |[0m     deletedCount: 0,
+[36mripes_server |[0m     upsertedCount: 0,
+[36mripes_server |[0m     upsertedIds: {},
+[36mripes_server |[0m     insertedIds: {
+[36mripes_server |[0m       '0': ObjectId {
+[36mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[36mripes_server |[0m           101, 129, 230,  80,
+[36mripes_server |[0m           199, 141,  66, 163,
+[36mripes_server |[0m           203, 184,  52, 219
+[36mripes_server |[0m         ]
+[36mripes_server |[0m       },
+[36mripes_server |[0m       '1': ObjectId {
+[36mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[36mripes_server |[0m           101, 129, 230,  80,
+[36mripes_server |[0m           199, 141,  66, 163,
+[36mripes_server |[0m           203, 184,  52, 220
+[36mripes_server |[0m         ]
+[36mripes_server |[0m       },
+[36mripes_server |[0m       '2': ObjectId {
+[36mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[36mripes_server |[0m           101, 129, 230,  80,
+[36mripes_server |[0m           199, 141,  66, 163,
+[36mripes_server |[0m           203, 184,  52, 221
+[36mripes_server |[0m         ]
+[36mripes_server |[0m       },
+[36mripes_server |[0m       '3': ObjectId {
+[36mripes_server |[0m         [Symbol(id)]: Buffer(12) [Uint8Array] [
+[36mripes_server |[0m           101, 129, 230,  80,
+[36mripes_server |[0m           199, 141,  66, 163,
+[36mripes_server |[0m           203, 184,  52, 222
+[36mripes_server |[0m         ]
+[36mripes_server |[0m       }
+[36mripes_server |[0m     }
+[36mripes_server |[0m   },
+[36mripes_server |[0m   [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+[36mripes_server |[0m }
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:52:00.636+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn38","msg":"Connection ended","attr":{"remote":"172.19.0.3:47264","uuid":{"uuid":{"$uuid":"1441fd4d-33cd-454b-a568-332f39fc414d"}},"connectionId":38,"connectionCount":1}}
+[36mmongodb   |[0m {"t":{"$date":"2023-12-19T18:52:00.636+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn37","msg":"Connection ended","attr":{"remote":"172.19.0.3:47250","uuid":{"uuid":{"$uuid":"51bcc074-5085-4016-83f7-11cec8f60e0d"}},"connectionId":37,"connectionCount":0}}
+[34;1mripes_server exited with code 1
+[0mGracefully stopping... (press Ctrl+C again to force)
