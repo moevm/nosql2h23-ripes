@@ -20,6 +20,4 @@ COPY ./server .
 
 RUN npm install
 
-CMD mongo admin --host mongodb:27017 --eval "db.createUser({user: 'ripes_server', pwd:'a_real_password', roles:['userAdminAnyDatabase'], mechanisms:['SCRAM-SHA-1']})" || echo o
-
-CMD node ./index.js
+CMD mongo admin --host mongodb:27017 --eval "db.createUser({user: 'ripes_server', pwd:'a_real_password', roles:['userAdminAnyDatabase'], mechanisms:['SCRAM-SHA-1']})"; node ./index.js
