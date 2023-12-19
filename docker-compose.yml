@@ -1,47 +1,27 @@
 services:
   db:
-    image: mongo:latest
+    image: mongo:7.0
     restart: unless-stopped
     container_name: mongodb
     volumes:
       - db-data:/data/db/
-    networks:
-      nosql_ripes_net:
-        ipv4_address: 10.5.0.2
     ports:
       - "127.0.0.1:27017:27017"
-    # environment:
-    #   MONGO_INITDB_ROOT_USERNAME: root
-    #   MONGO_INITDB_ROOT_PASSWORD: example
   server:
     restart: unless-stopped
     container_name: ripes_server
     build:
       context: ./backend
       dockerfile: Dockerfile_server
-    networks:
-      nosql_ripes_net:
-        ipv4_address: 10.5.0.3
     ports:
-      - "3000:3000"
+      - "127.0.0.1:3000:3000"
   client:
     restart: unless-stopped
     container_name: ripes_client
     build:
       context: ./frontend
       dockerfile: Dockerfile_client
-    networks:
-      nosql_ripes_net:
-        ipv4_address: 10.5.0.4
     ports:
-      - "8080:80"
+      - "127.0.0.1:8080:80"
 volumes:
   db-data:
-
-networks:
-  nosql_ripes_net:
-    driver: bridge
-    ipam:
-     config:
-       - subnet: 10.5.0.0/16
-         gateway: 10.5.0.1

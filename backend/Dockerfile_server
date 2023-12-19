@@ -1,7 +1,6 @@
 FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND noninteractive
 
-
 RUN apt-get update
 RUN apt-get install npm -f -y
 RUN apt-get install curl -f -y
@@ -20,6 +19,6 @@ COPY ./server .
 
 RUN npm install
 
-CMD mongo admin --eval "db.createUser({user: 'ripes_server', pwd:'a_real_password', roles:['userAdminAnyDatabase'], mechanisms:["SCRAM-SHA-1"]})"
+CMD mongo admin --host mongodb:27017 --eval "db.createUser({user: 'ripes_server', pwd:'a_real_password', roles:['userAdminAnyDatabase'], mechanisms:['SCRAM-SHA-1']})" 
 
 CMD node ./index.js

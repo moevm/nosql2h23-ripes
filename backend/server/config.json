@@ -1,9 +1,9 @@
 {
-	"ip": "10.5.0.3",
+	"ip": "ripes_server",
 	"port": 3000,
 
 	"db": {
-		"ip": "10.5.0.2",
+		"ip": "mongodb",
 		"port": "27017",
 		"user": "ripes_server",
 		"pwd": "a_real_password"

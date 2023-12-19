@@ -16,7 +16,7 @@ function generate_mongo_uri(ip, port, user, pwd)
 	console.log("mongodb://" + user + ":" + pwd + "@" + ip + ":" + port)
 	return "mongodb://" + user + ":" + pwd + "@" + ip + ":" + port;
 }
-const config = JSON.parse(fs.readFileSync('config.json'));
+const config = JSON.parse(fs.readFileSync("config.json"));
 
 // Set up MongoDB
 const mongo_client = new MongoClient(generate_mongo_uri(config.db.ip, config.db.port, config.db.user, config.db.pwd));
@@ -32,6 +32,9 @@ if(!m_col_experiments){
 	log.error("mongo", "Collection 'experiments' doesn't exist");
 	process.exit(1);
 }
+
+// Set up test data
+mongo_io.save(m_col_experiments, JSON.parse(fs.readFileSync("test_data.json")));
 
 // Misc functions
 
