@@ -34,7 +34,10 @@ if(!m_col_experiments){
 }
 
 // Set up test data
-mongo_io.save(m_col_experiments, JSON.parse(fs.readFileSync("test_data.json")));
+m_col_experiments.count(function(err, count) {
+	if(!err && count === 0)
+		mongo_io.save(m_col_experiments, JSON.parse(fs.readFileSync("test_data.json")));
+});
 
 // Misc functions
 
