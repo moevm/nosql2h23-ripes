@@ -1,7 +1,9 @@
 <template>
   <div class="table">
     <ag-grid-vue style="overflow-x:hidden; width: 100%; height: 500px;" class="ag-theme-alpine" :columnDefs="columnDefs"
-      :rowData="rowData" @grid-ready="onGridReady" :defaultColDef="defaultColDef" @onColumnResized="onTableResized" editable=true @rowClicked="onRowClicked">
+    :datasource="dataSource" @grid-ready="onGridReady" :defaultColDef="defaultColDef" @onColumnResized="onTableResized" editable=true @rowClicked="onRowClicked"
+      :grid-options="gridOptions"
+      >
     </ag-grid-vue>
   </div>
 </template>
@@ -11,6 +13,7 @@ import { AgGridVue } from 'ag-grid-vue3'
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 import ExperimentsAPI from '@/api/requests'
+import { ExperimentsDataSource } from '@/api/datasources/index'
 
 export default {
   name: 'ExperimentsListComponent',
@@ -22,6 +25,14 @@ export default {
   },
   data() {
     return {
+      dataSource: null, 
+      gridOptions: {
+        rowModelType: 'infinite',
+        paginationPageSize: 10,
+        pagination: true,
+        rowBuffer: 10,
+        cacheBlockSize: 10,
+      },
       gridApi: null,
       defaultColDef: {
         resizable: true,
@@ -88,7 +99,9 @@ export default {
     },
   },
   async created() {
-    this.rowData = (await ExperimentsAPI.getExperiments()).data
+    console.log('CREEEATED')
+    this.dataSource = new ExperimentsDataSource()
+    //this.rowData = (await ExperimentsAPI.getExperiments()).data
 
     console.log((await ExperimentsAPI.getExperiments()).data)
   }
@@ -98,6 +111,10 @@ export default {
 <style scoped>
 .table {
   width: 100%;
+
+.buttons-container {
+  display: flex;
+}
 
 }
 </style>

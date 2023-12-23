@@ -3,7 +3,7 @@ import http from './httpAxios'
 export default class ExperimentsAPI {
   static async getExperiments(filter) {
     console.log(filter)
-    return http.get('/experiments')
+    return http.get('/experiments', {headers: {filters: JSON.stringify(filter)}})
   }
   static async getExperiment(id, min,max) {
     if(min !== undefined && max!== undefined) {
