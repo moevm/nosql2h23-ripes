@@ -51,6 +51,17 @@ function filters_expm(filters)
 		let tz_off = new Date().getTimezoneOffset() * 60000;
 		filters.end_timestamp = {"$eq": new Date(new Date(filters.end_timestamp).getTime() - tz_off)};
 	}
+
+	limit = undefined, offset = undefined;
+	if(filters.limit !== undefined){
+		limit = filters.limit;
+		delete filters.limit;
+	}
+	if(filters.offset !== undefined){
+		offset = filters.offset;
+		delete filters.offset;
+	}
+	return { limit, offset };
 }
 function filters_expm_id(filters, req)
 {

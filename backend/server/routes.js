@@ -34,10 +34,13 @@ if(!m_col_experiments){
 }
 
 // Set up test data
-m_col_experiments.count(function(err, count) {
-	if(!err && count === 0)
+async function setup_test_data()
+{
+	count = await m_col_experiments.count();
+	if(count === 0)
 		mongo_io.save(m_col_experiments, JSON.parse(fs.readFileSync("test_data.json")));
-});
+}
+setup_test_data();
 
 // Misc functions
 
@@ -58,8 +61,11 @@ const router = express.Router();
 
 router.get("/experiments", async function(req, res){
 	let filters = prep.get_filters(req);
-	prep.filters_expm(filters);
-	let cur = m_col_experiments.find(filters).project({name: 1, processor: 1, start_timestamp: 1, end_timestamp: 1, source_file: 1});
+	page = prep.filters_expm(filters);
+	let cur = m_col_experiments.find(filters);
+	if(page.limit) cur = cur.limit(page.limit);
+	if(page.offset) cur = cur.skip(page.offset);
+	cur = cur.project({name: 1, processor: 1, start_timestamp: 1, end_timestamp: 1, source_file: 1});
 	expm_desc = [];
 	for await(const doc of cur){
 		prep.doc_expm(doc);

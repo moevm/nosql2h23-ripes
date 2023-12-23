@@ -11,13 +11,15 @@ function filtersToServer(filters) {
 
 export class ExperimentsDataSource {
   async getRows(params) {
-    //const limit = params.endRow - params.startRow
-    //const offset = params.startRow
+    const limit = params.endRow - params.startRow
+    const offset = params.startRow
 
     console.log('TEEEEEEEEEEEEEEEEESS')
     console.log(params)
     const filter = params.filterModel
     console.log(filtersToServer(filter))
+    filter.limit = limit
+    filter.offset = offset
     const response = await ExperimentsAPI.getExperiments(filter)
     console.log(response)
     params.successCallback(response.data, 15)
