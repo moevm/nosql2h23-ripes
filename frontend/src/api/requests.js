@@ -17,7 +17,7 @@ export default class ExperimentsAPI {
         delete filters[key]
       }
     }
-    return http.get(`/experiment_stats`, {headers: {filters: JSON.stringify(filters)}})
+    return http.get(`/experiment_stats`, {headers: {filters: JSON.stringify(filters)}, validateStatus: false})
   }
   static async importFile(formData){
     try {

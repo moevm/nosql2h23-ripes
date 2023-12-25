@@ -41,17 +41,17 @@
     <div class="experiments-list">
       <div class="form-group">
         <div class="title">
-          Среднее время: {{ statistics.avg_time.toFixed(2) }}
+          Среднее время: {{ statistics && statistics.avg_time ? statistics.avg_time.toFixed(2) : "--" }}
         </div>
       </div>
       <div class="form-group">
         <div class="title">
-          Минимальное время: {{ statistics.min_time.toFixed(2) }}
+          Минимальное время: {{ statistics && statistics.min_time ? statistics.min_time.toFixed(2) : "--" }}
         </div>
       </div>
       <div class="form-group">
         <div class="title">
-          Максимальное время: {{ statistics.max_time.toFixed(2) }}
+          Максимальное время: {{ statistics && statistics.max_time ? statistics.max_time.toFixed(2) : "--" }}
         </div>
       </div>
     </div>
@@ -80,15 +80,23 @@ export default {
     }
   },
   methods: {
-    async applyFilters() { 
-      this.statistics = (await ExperimentsAPI.getStatistic(this.filters)).data
+    async applyFilters() {
+      try {
+          this.statistics = (await ExperimentsAPI.getStatistic(this.filters)).data
+      }
+      catch {
+          this.statistics = null
+      }
     }
   },
   async created() {
-    console.log(this.filters)
-    this.statistics = (await ExperimentsAPI.getStatistic(this.filters)).data
+      try {
+          this.statistics = (await ExperimentsAPI.getStatistic(this.filters)).data
+      }
+      catch {
+          this.statistics = null
+      }
   }
-
 }
 </script>
   
