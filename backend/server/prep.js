@@ -1,5 +1,11 @@
 const { ObjectId } = require("mongodb");
 
+function get_utc_timestamp(ts)
+{
+	let tz_off = new Date().getTimezoneOffset() * 60000;
+	return new Date(new Date(ts).getTime() - tz_off);
+}
+
 function send_json_res(res, _json)
 {
 	res.setHeader('Content-Type', 'application/json');
@@ -45,11 +51,29 @@ function filters_expm(filters)
 
 	if(filters.start_timestamp !== undefined){
 		let tz_off = new Date().getTimezoneOffset() * 60000;
-		filters.start_timestamp = {"$eq": new Date(new Date(filters.start_timestamp).getTime() - tz_off)};
+		ts_filter = {};
+		if(filters.start_timestamp.begin !== undefined && filters.start_timestamp.begin !== null)
+			ts_filter["$gte"] = get_utc_timestamp(filters.start_timestamp.begin);
+		if(filters.start_timestamp.end !== undefined && filters.start_timestamp.end !== null)
+			ts_filter["$lte"] = get_utc_timestamp(filters.start_timestamp.end);
+
+		if(ts_filter["$gte"] !== undefined || ts_filter["$lte"] !== undefined)
+			filters.start_timestamp = ts_filter;
+		else
+			delete filters.start_timestamp;
 	}
 	if(filters.end_timestamp !== undefined){
 		let tz_off = new Date().getTimezoneOffset() * 60000;
-		filters.end_timestamp = {"$eq": new Date(new Date(filters.end_timestamp).getTime() - tz_off)};
+		ts_filter = {};
+		if(filters.end_timestamp.begin !== undefined && filters.end_timestamp.begin !== null)
+			ts_filter["$gte"] = get_utc_timestamp(filters.end_timestamp.begin);
+		if(filters.end_timestamp.end !== undefined && filters.end_timestamp.end !== null)
+			ts_filter["$lte"] = get_utc_timestamp(filters.end_timestamp.end);
+
+		if(ts_filter["$gte"] !== undefined || ts_filter["$lte"] !== undefined)
+			filters.end_timestamp = ts_filter;
+		else
+			delete filters.end_timestamp;
 	}
 
 	limit = undefined, offset = undefined;
