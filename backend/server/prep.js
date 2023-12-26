@@ -1,10 +1,24 @@
 const { ObjectId } = require("mongodb");
 
+/* Helper functions */
+
 function get_utc_timestamp(ts)
 {
 	let tz_off = new Date().getTimezoneOffset() * 60000;
 	return new Date(new Date(ts).getTime() - tz_off);
 }
+
+function set_substring_search(filters)
+{
+	for(k in filters) {
+		v = filters[k];
+		if(typeof v == "string" || v instanceof String) {
+			filters[k] = {$regex: v, $options: "i"};
+		}
+	}
+}
+
+/* Exported functions */
 
 function send_json_res(res, _json)
 {
@@ -36,6 +50,9 @@ function filters_expm(filters)
 {
 	if(filters.id) filters._id = filters.id; 
 	delete filters.id;
+
+	set_substring_search(filters);
+
 	if(filters.length !== undefined){
 		filters["$expr"] = {
 			$eq: [
